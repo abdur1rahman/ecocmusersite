@@ -1,0 +1,16 @@
+.productHeading{
+    font-size: 28px;
+    color: #aa66aa;
+    text-align: center;
+    font-weight: 700;
+    margin: 5px;
+    font-family: roboto;
+}
+.productPara{
+    font-size: 16px;
+    color: #a6a6a6;
+    text-align: center;
+    font-weight: 400;
+    margin: 0;
+    font-family: roboto-regular;
+}

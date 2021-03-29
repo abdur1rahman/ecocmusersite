@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../src/asset/css/style.css';
+import "../src/asset/css/fontawesome.min.css";
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 

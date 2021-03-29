@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
 
-class Callection extends Component {
+class FooterMobile extends Component {
     render() {
         return (
             <Fragment>
@@ -10,4 +10,4 @@ class Callection extends Component {
     }
 }
 
-export default Callection;
+export default FooterMobile;

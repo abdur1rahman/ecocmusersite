@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 
 class Nav extends Component {
     render() {
         return (
-            <div>
-                <h1> hello</h1>
-            </div>
+            <Fragment>
+
+            </Fragment>
         );
     }
 }
