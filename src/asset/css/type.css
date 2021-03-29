@@ -1,16 +1,29 @@
-.productHeading{
-    font-size: 28px;
+.sectionTitle{
+    font-size: 20px;
     color: #aa66aa;
     text-align: center;
-    font-weight: 700;
-    margin: 5px;
+    font-weight: 400;
+    margin-top: 5px;
     font-family: roboto;
 }
-.productPara{
-    font-size: 16px;
+.sectionSubtitle{
+    font-size: 15px;
     color: #a6a6a6;
     text-align: center;
-    font-weight: 400;
-    margin: 0;
+    font-weight: 300;
     font-family: roboto-regular;
+}
+.productName{
+    font-size: 18px;
+    color: #aa66aa;
+    text-align: center;
+    font-weight: 400;
+    font-family: roboto;
+}
+.productPrice{
+    font-size: 14px;
+    color: #a6a6a6;
+    text-align: center;
+    font-weight: 300;
+    font-family: roboto;
 }

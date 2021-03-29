@@ -1,11 +1,12 @@
 import React, {Component, Fragment} from 'react';
+import Products from '../Component/home/products';
+import {Card, Col, Container, Row} from "react-bootstrap";
 
 class home extends Component {
     render() {
         return (
             <Fragment>
-                <h1 className="productHeading">the is a Home page </h1>
-                <p className="productPara">Bangladesh dayly shoppingmul </p>
+                <Products/>
             </Fragment>
         );
     }
