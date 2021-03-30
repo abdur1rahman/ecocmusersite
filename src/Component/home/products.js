@@ -18,7 +18,16 @@ class Products extends Component {
                 <Container fluid={true}>
                     <Row>
                         <Col xl={2} lg={2} md={2} sm={4} xs-6>
-                            <Card className="imageBox">
+                            <Card className="imageBox card1">
+                                <img src={ProductItem}/>
+                                <Card.Body>
+                                    <h1 className="productName">T-SHART</h1>
+                                    <p className="productPrice">Price- 225 </p>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col xl={2} lg={2} md={2} sm={4} xs-6>
+                            <Card className="imageBox card1">
                                 <img src={ProductItem}/>
                                 <Card.Body>
                                     <h1 className="productName">T-SHART</h1>
