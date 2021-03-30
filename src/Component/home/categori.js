@@ -6,7 +6,7 @@ class Categori extends Component {
     render() {
         return (
             <Fragment>
-                <Container>
+                <Container className="mt-5">
                     <Row>
                         <Col key={1} xl={12} lg={12} md={12} sm={12} xs={12}>
                             <p className="sectionTitle">CATEGORIES</p>
@@ -15,7 +15,7 @@ class Categori extends Component {
                     </Row>
                 </Container>
 
-                <Container fluid={true}>
+                <Container fluid={true}className="mt-5">
                     <Row>
                         <Col key={1} xl={6} lg={6} md={6} sm={6} xs={6}>
                             <Row>

@@ -6,7 +6,7 @@ class Products extends Component {
     render() {
         return (
             <Fragment>
-                <Container>
+                <Container className="mt-5">
                     <Row>
                         <Col xl={12} lg={12} md={12} sm={12} xs={12}>
                             <p className="sectionTitle">FEATURED PRODUCTS</p>
@@ -15,7 +15,7 @@ class Products extends Component {
                     </Row>
                 </Container>
 
-                <Container fluid={true}>
+                <Container fluid={true} className="mt-5">
                     <Row>
                         <Col xl={2} lg={2} md={2} sm={4} xs-6>
                             <Card className="imageBox card1">
