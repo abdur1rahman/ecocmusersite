@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import {Card, Col, Container, Row} from "react-bootstrap";
-import ProductItem from "../../asset/images/portfolio-06.jpg";
+import ProductItem from "../../asset/images/portfolio-09.jpg";
 class Callection extends Component {
     render() {
         return (
