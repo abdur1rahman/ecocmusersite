@@ -1,8 +1,12 @@
-import React, {Component, Fragment} from 'react';
-import {Col, Container, Row} from "react-bootstrap";
+import React, {Component} from 'react';
+import { Container,Card} from "react-bootstrap";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css"; 
+import ProductItem from "../../asset/images/portfolio-01.jpg";
+import ProductItem1 from "../../asset/images/portfolio-05.jpg";
+import ProductItem2 from "../../asset/images/portfolio-08.jpg";
+import ProductItem3 from "../../asset/images/portfolio-09.jpg";
 
 class NewAraibal extends Component {
     render() {
@@ -45,31 +49,57 @@ class NewAraibal extends Component {
         return (
             <Container className="mt-5">
                     <p className="sectionTitle">NEW ARRIVAL</p>
-                    <p className="sectionSubtitle">Some Of Our Exclusive Callecction, You My Like </p>
+                    <i class="fas fa-angle-right"></i>
+                    <i class="fas fa-angle-left"></i>
+                    <p className="sectionSubtitle mb-5">Some Of Our Exclusive Callecction, You My Like </p>
                     <Slider {...settings}>
             <div>
-              <h3>1</h3>
+              <Card className="imageBox card1">
+                  <img src={ProductItem}/>
+                      <Card.Body>
+                         <h1 className="productName">T-SHART</h1>
+                          <p className="productPrice">Price- 225 </p>
+                      </Card.Body>
+                </Card>
             </div>
             <div>
-              <h3>2</h3>
+              <Card className="imageBox card1">
+                  <img src={ProductItem1}/>
+                      <Card.Body>
+                         <h1 className="productName">T-SHART</h1>
+                          <p className="productPrice">Price- 225 </p>
+                      </Card.Body>
+                </Card>
             </div>
             <div>
-              <h3>3</h3>
+            <Card className="imageBox card1">
+                  <img src={ProductItem2}/>
+                      <Card.Body>
+                         <h1 className="productName">T-SHART</h1>
+                          <p className="productPrice">Price- 225 </p>
+                      </Card.Body>
+                </Card>
             </div>
             <div>
-              <h3>4</h3>
+            <Card className="imageBox card1">
+                  <img src={ProductItem3}/>
+                      <Card.Body>
+                         <h1 className="productName">T-SHART</h1>
+                          <p className="productPrice">Price- 225 </p>
+                      </Card.Body>
+                </Card>
             </div>
+           
+            
+           
             <div>
-              <h3>5</h3>
-            </div>
-            <div>
-              <h3>6</h3>
-            </div>
-            <div>
-              <h3>7</h3>
-            </div>
-            <div>
-              <h3>8</h3>
+            <Card className="imageBox card1">
+                  <img src={ProductItem3}/>
+                      <Card.Body>
+                         <h1 className="productName">T-SHART</h1>
+                          <p className="productPrice">Price- 225 </p>
+                      </Card.Body>
+                </Card>
             </div>
           </Slider>
         </Container>

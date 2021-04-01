@@ -9,10 +9,10 @@
 }
 
 .sectionFooter{
-    width: 100%;
-    height: 100px;
-    background: #aa66aa;
-    text-align: center;
-    padding-top:35px;
-    color:#ffffff;
+    background-color: #aa66aa;
+    height: 70px;
+    color: #ffffff;
+}
+.sectionFooterFont{
+    margin-top: 30px;
 }
