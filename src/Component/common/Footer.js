@@ -5,7 +5,7 @@ class Footer extends Component {
     render() {
         return (
             <Fragment>
-                <Container>
+                <Container className="mt-5">
                     <Row>
                     <Col xl={3} lg={3} md={3} sm={6}xs={6}>
                             <p className="sectionTitle"> SHARE LINK</p>
