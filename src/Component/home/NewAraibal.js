@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Container,Card,Button} from "react-bootstrap";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css"; 
+
 import ProductItem from "../../asset/images/portfolio-01.jpg";
 import ProductItem1 from "../../asset/images/portfolio-05.jpg";
 import ProductItem2 from "../../asset/images/portfolio-08.jpg";
@@ -61,7 +61,7 @@ class NewAraibal extends Component {
       ]
     };
         return (
-            <Container fluid={true} className="mt-5 p-5">
+            <Container fluid={true} className="m-0 p-0">
                     <p className="sectionTitle">NEW ARRIVAL</p>
 
                     <p className="sectionSubtitle">Some Of Our Exclusive Callecction, You My Like
@@ -71,7 +71,7 @@ class NewAraibal extends Component {
 
           <Slider ref={c=>(this.slider=c)}  {...settings}>
             <div>
-              <Card className="imageBox card1 p-3">
+              <Card className="imageBox card1 p-3 m-0">
                   <img src={ProductItem}/>
                       <Card.Body>
                          <h1 className="productName">T-SHART</h1>
@@ -80,7 +80,7 @@ class NewAraibal extends Component {
                 </Card>
             </div>
             <div>
-              <Card className="imageBox card1 p-3">
+              <Card className="imageBox card1 p-3 m-0">
                   <img src={ProductItem1}/>
                       <Card.Body>
                          <h1 className="productName">T-SHART</h1>
@@ -89,7 +89,7 @@ class NewAraibal extends Component {
                 </Card>
             </div>
             <div>
-            <Card className="imageBox card1 p-3">
+            <Card className="imageBox card1 p-3 m-0">
                   <img src={ProductItem2}/>
                       <Card.Body>
                          <h1 className="productName">T-SHART</h1>
@@ -98,7 +98,7 @@ class NewAraibal extends Component {
                 </Card>
             </div>
             <div>
-            <Card className="imageBox card1 p-3">
+            <Card className="imageBox card1 p-3 m-0">
                   <img src={ProductItem3}/>
                       <Card.Body>
                          <h1 className="productName">T-SHART</h1>
@@ -110,7 +110,7 @@ class NewAraibal extends Component {
             
            
             <div>
-            <Card className="imageBox card1 p-3">
+            <Card className="imageBox card1 p-3 m-0">
                   <img src={ProductItem3}/>
                       <Card.Body>
                          <h1 className="productName">T-SHART</h1>

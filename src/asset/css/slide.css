@@ -1,0 +1,8 @@
+.slideImg{
+    height: 520px !important;
+   width: 100%;
+
+}
+.slick-arrow{
+    display: none !important;
+}

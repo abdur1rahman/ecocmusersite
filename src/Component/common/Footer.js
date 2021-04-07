@@ -1,5 +1,11 @@
 import React, {Component, Fragment} from 'react';
 import {Container, Row, Col}from "react-bootstrap";
+import ReactDOM from 'react-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import {  } from '@fortawesome/react-fontawesome';
+
+
+
 
 class Footer extends Component {
     render() {
@@ -9,11 +15,8 @@ class Footer extends Component {
                     <Row>
                     <Col xl={3} lg={3} md={3} sm={6}xs={6}>
                             <p className="sectionTitle"> SHARE LINK</p>
-                            <i class="fab fa-facebook-square"></i>
-                            <i class="fab fa-twitter-square"></i>
-                            <i class="fab fa-linkedin"></i>
-                            <i class="fab fa-pinterest-square"></i>
-                            <i class="fab fa-instagram-square"></i>
+                            <FontAwesomeIcon icon=""/>
+              
 
                         </Col>
                         <Col xl={3} lg={3} md={3} sm={6}xs={6}>
@@ -30,11 +33,11 @@ class Footer extends Component {
                             <p className="topFooter morinfoFooter">Our Team </p>
                             <p className="topFooter morinfoFooter">Refun policy</p>
                             <p className="topFooter morinfoFooter">Privacy policy</p>
+                           
                         </Col>
                         <Col xl={3} lg={3} md={3} sm={6}xs={6}>
                             <p className="sectionTitle">DOWNLOAD APP</p>
-                            <i class="fab fa-windows"></i>
-                            <i class="fab fa-apple"></i>
+             
                         </Col>
                     </Row>
 

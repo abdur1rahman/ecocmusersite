@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component, Fragment,Row, Col} from 'react';
 import {Container, Navbar,NavDropdown,Form,Button,FormControl, NavItem} from "react-bootstrap";
 
 
@@ -9,7 +9,8 @@ class Nav extends Component {
            
                   <Fragment>
                       <Container fluid={true} className="m-0 p-0">
-                        <Navbar bg="light navBackground " expand="lg" fixed={"top"}>
+                          
+                                <Navbar bg="light navBackground " expand="lg" fixed={"top"}>
                             <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav">
@@ -25,15 +26,23 @@ class Nav extends Component {
                                     <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                                     <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                                 </NavDropdown>
-                                <Form inline ClassName="ml-30">
-                                     <FormControl type="text" placeholder="Search" className="" />
-                                     <Button variant="outline-success"ClassName="btnCoustom">Search</Button>
-                                </Form>
-                                <NavItem className="navItem"><a href="#">FAVERITE</a></NavItem>
-                                <NavItem className="navItem"><a href="#">NOTIFICATION</a></NavItem>
-                                <NavItem className="navItem"><a href="#">LOGIN</a></NavItem>
+                               
+                                   
+                                        
+                                        <Form inline  >
+                                             <FormControl type="text" placeholder="Search"  />
+                                             <Button variant="outline-success"ClassName="btnCoustom">Search</Button>
+                                        </Form>
+                                        
+                      
+                                
+
+                                <NavItem className="navItem"><a href="#">Favarit</a></NavItem>
+                                <NavItem className="navItem"><a href="#">Notification</a></NavItem>
+                                <NavItem className="navItem"><a href="#">Login</a></NavItem>
                             </Navbar.Collapse>
                         </Navbar>
+                           
                       </Container>
                   </Fragment>
            
