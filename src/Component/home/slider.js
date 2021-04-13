@@ -13,10 +13,10 @@ class Slider1 extends Component {
             dots: false,
             infinite: true,
             autoplay: true,
-            autoplaySpeed: 5000,
-            speed: 2200,
-            slidesToShow: 1,
-            slidesToScroll: 1,
+            autoplaySpeed: 1000,
+            speed: 2000,
+            slidesToShow: 3,
+            slidesToScroll: 3,
             initialSlide: 0,
             responsive: [
           {

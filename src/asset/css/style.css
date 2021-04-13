@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
 @import "button.css";
-@import "fontawesome.min.css";
+@import "fontawesome.css";
 @import "card.css";
 @import "foooterMObile.css";
 @import "footer.css";
@@ -9,3 +9,5 @@
 @import "navMObil.css";
 @import "slide.css";
 @import "type.css";
+@import "OnBoard.css";
+@import "animate.min.css";

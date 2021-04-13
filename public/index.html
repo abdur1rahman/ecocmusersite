@@ -16,10 +16,23 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>MOnLightExpress</title>
+
+    <script type="text/javascript" src="//translate.gogole.com/translate_a/element.js?cb=googletTranslateElementInit"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+      <script>
+          function googleTranslateElementInit() {
+              let config={pageLanguage:'en',
+                includedLanguages:'bn,en,hi',
+                
+              };
+              let languageOptionID = 'google_translate_element';
+              new goole.translate.TranslateElement(config,languageOptionID);
+          }
+      </script>
 
   </body>
 </html>

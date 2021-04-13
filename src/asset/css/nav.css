@@ -1,29 +1,7 @@
-a{
-    color: #f9f9f9 !important;
-}
-.navBackground{
-    background-color: #aa66aa !important;;
-}
-.dropdown-menu{
-    background-color: #aa66aa !important;;
-}
-.navItem a{
-    list-style-type: none;
-    text-decoration:none;
-    margin-left: 10px;
-    color: #f9f9f9;
-}
-.navItem a:hover{
-    color: #f6f6f6;
-}
-.btn-outline-success{
-    color: #f9f9f9;
-    background-color: #28a745 !important;
-    border-radius: 0px !important;
-}
-.form-control{
-    margin-left: 100px !important;
-    border-top-right-radius:0px ;
-    border-bottom-right-radius: 0px;
-    background-color: #f9f9f9 !important;
+.NavRight{
+    font-size: 18px;
+    color: red;
+    padding: 5px;
+    margin: 5px;
+    text-align: right;
 }

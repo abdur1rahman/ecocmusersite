@@ -64,11 +64,12 @@ class NewAraibal extends Component {
             <Container fluid={true} className="m-0 p-0">
                     <p className="sectionTitle">NEW ARRIVAL</p>
 
-                    <p className="sectionSubtitle">Some Of Our Exclusive Callecction, You My Like
-                    <Button variant="success btn-sm ml-2" onClick={this.previous}>Prev</Button>
-                    <Button variant="success btn-sm ml-2 "onClick={this.next}>Next</Button>
-                     </p>
-
+                    <p className="sectionSubtitle">Some Of Our Exclusive Callecction, You My Like</p>
+                    <div className='text-center'>
+                          <Button variant="success btn-sm ml-2" onClick={this.previous}>Prev</Button>
+                          <Button variant="success btn-sm ml-2" onClick={this.next}>Next</Button>
+                    </div>
+               
           <Slider ref={c=>(this.slider=c)}  {...settings}>
             <div>
               <Card className="imageBox card1 p-3 m-0">
