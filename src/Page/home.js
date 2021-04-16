@@ -1,24 +1,19 @@
 import React, {Component, Fragment} from 'react';
-import Products from '../Component/home/products';
+import Footer from "../Component/common/Footer";
+import Products from "../Component/home/products";
+import Slider1 from "../Component/home/slider";
 import Categori from "../Component/home/categori";
 import Callection from "../Component/home/callection";
 import NewAraibal from "../Component/home/NewAraibal";
-import Footer from '../Component/common/Footer';
-import Slider from '../Component/home/slider';
-import OnBord from '../Component/common/onBord';
-import Nav from "../Component/common/Nav";
 
-
-class home extends Component {
+class Home extends Component {
     render() {
         return (
             <Fragment>
-                <Nav/>
-                 <Slider/>
+                <Slider1/>
                 <Products/>
-                <OnBord/>
-                <Callection/>
                 <Categori/>
+                <Callection/>
                 <NewAraibal/>
                 <Footer/>
             </Fragment>
@@ -26,4 +21,4 @@ class home extends Component {
     }
 }
 
-export default home;
+export default Home;

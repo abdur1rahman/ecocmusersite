@@ -1,16 +1,16 @@
 import React, {Component, Fragment} from 'react';
+import Callection from "../Component/home/callection";
 import Footer from "../Component/common/Footer";
-import About from "../Component/home/about";
 
-class AboutPage extends Component {
+class CallectionPage extends Component {
     render() {
         return (
             <Fragment>
-                <About/>
-                <Footer/>
+              <Callection/>
+              <Footer/>
             </Fragment>
         );
     }
 }
 
-export default AboutPage;
+export default CallectionPage;

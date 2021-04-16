@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {Card, Col, Container, Row} from "react-bootstrap";
 import ProductItem from "../../asset/images/product.png";
+import {Link} from "react-router-dom";
 
 class Products extends Component {
     render() {
@@ -19,7 +20,7 @@ class Products extends Component {
                     <Row>
                         <Col xl={2} lg={2} md={2} sm={4} xs-6>
                             <Card className="imageBox card1">
-                                <img src={ProductItem}/>
+                               <Link to='/allproduct'><img src={ProductItem}/></Link>
                                 <Card.Body>
                                     <h1 className="productName">T-SHART</h1>
                                     <p className="productPrice">Price- 225 </p>

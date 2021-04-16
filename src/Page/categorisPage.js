@@ -1,16 +1,16 @@
 import React, {Component, Fragment} from 'react';
+import Categori from "../Component/home/categori";
 import Footer from "../Component/common/Footer";
-import About from "../Component/home/about";
 
-class AboutPage extends Component {
+class CategorisPage extends Component {
     render() {
         return (
             <Fragment>
-                <About/>
+                <Categori/>
                 <Footer/>
             </Fragment>
         );
     }
 }
 
-export default AboutPage;
+export default CategorisPage;

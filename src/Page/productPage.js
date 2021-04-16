@@ -1,16 +1,16 @@
 import React, {Component, Fragment} from 'react';
+import Products from "../Component/home/products";
 import Footer from "../Component/common/Footer";
-import About from "../Component/home/about";
 
-class AboutPage extends Component {
+class ProductPage extends Component {
     render() {
         return (
             <Fragment>
-                <About/>
+                <Products/>
                 <Footer/>
             </Fragment>
         );
     }
 }
 
-export default AboutPage;
+export default ProductPage;

@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {Card, Col, Container, Row} from "react-bootstrap";
 import ProductItem from "../../asset/images/product.png";
+import {Link} from "react-router-dom";
 
 class Categori extends Component {
     render() {
@@ -80,7 +81,7 @@ class Categori extends Component {
                                 </Col>
                                 <Col xl={3} lg={3} md={3} sm={6} xs-6>
                                     <Card className=" card1">
-                                        <img src={ProductItem}/>
+                                        <Link to='/allcategoris'> <img src={ProductItem}/></Link>
                                         <Card.Body>
                                             <h1 className="productName">T-SHART</h1>
                                             <p className="productPrice">Price- 225 </p>

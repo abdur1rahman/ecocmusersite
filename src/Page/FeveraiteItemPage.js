@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 
-class ProductDetailsPage extends Component {
+class FeveraiteItemPage extends Component {
     render() {
         return (
             <div>
-
+                
             </div>
         );
     }
 }
 
-export default ProductDetailsPage;
+export default FeveraiteItemPage;
