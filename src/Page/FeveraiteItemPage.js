@@ -1,11 +1,14 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
+import Nav from "../Component/common/Nav";
+import Footer from "../Component/common/Footer";
 
 class FeveraiteItemPage extends Component {
     render() {
         return (
-            <div>
-                
-            </div>
+            <Fragment>
+                <Nav/>
+                <Footer/>
+            </Fragment>
         );
     }
 }

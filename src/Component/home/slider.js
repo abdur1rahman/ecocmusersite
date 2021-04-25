@@ -47,7 +47,7 @@ class Slider1 extends Component {
       };
 
         return (
-            <Container fluid={true} className="mt-0 p-0  ">
+            <Container fluid={true} className="mt-5 p-0  ">
  <Slider ref={c=>(this.slider=c)}  {...settings}>
             <div>              
                   <img className="slideImg" src={ProductItem}/>                

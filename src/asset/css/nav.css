@@ -1,7 +1,13 @@
-.NavRight{
-    font-size: 18px;
-    color: red;
-    padding: 5px;
-    margin: 5px;
+.NavBg{
+    background: #aa66aa !important;
+}
+.searchBar{
+    margin-left:50px !important;
+    background: #eeeeee;
+    width: 100% !important;
+}
+.NavIcon{
     text-align: right;
+    float:right !important;
+    
 }

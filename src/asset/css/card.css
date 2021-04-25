@@ -1,28 +1,24 @@
-.card1{
-    width: 100%;
+.card{
+    width: 100% !important;
     height: 100%;
     border: none !important;
     box-shadow: 0 0 4px rgba(57, 78, 234, 0.1);
     overflow: hidden;
+    display: block;
 }
 .card1:hover{
     box-shadow: none;
 }
-imageBox{
-    width:100%;
-    position: relative;
-    margin: auto;
 
-}
-imageBox img{
-    width: 100%;
+.card img{
+    width: 100% !important;
     max-width: 100%;
     height: auto;
     transition: all 1.2s;
     transform: scale(1);
-    display: block;
+ 
 }
-.imageBox:hover img{
+.card:hover img{
     transform: scale(1.1);
     
 }

@@ -1,0 +1,12 @@
+.contactStyle{
+    width: 100% !important;
+    height: auto !important;
+    margin: auto !important;
+    padding-top: 20px !important;
+    }
+    .contactType{
+        margin: 20px !important;
+    }
+    .contactBg{
+        background-color: #f6f6f6 !important;
+    }

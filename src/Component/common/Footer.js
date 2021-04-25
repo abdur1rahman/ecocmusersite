@@ -10,8 +10,12 @@ import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
 import apple  from '../../asset/images/Apple_logo_black.svg';
 import widows from '../../asset/images/windows-logo-social.png';
 import {Link} from "react-router-dom";
+import axios from "axios";
+import AppURL from "../api/appURL";
 class Footer extends Component {
+
     render() {
+
         return (
             <Fragment>
                 <Container className="mt-5 text-center">
