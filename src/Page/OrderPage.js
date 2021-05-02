@@ -1,18 +1,19 @@
 import React, {Component, Fragment} from 'react';
-import OnBord from "../Component/common/onBord";
 import Nav from "../Component/common/Nav";
 import Footer from "../Component/common/Footer";
+import axios from "axios";
+import AppURL from "../Component/api/appURL";
 
-class OnBordPages extends Component {
+class OrderPage extends Component {
+
     render() {
         return (
             <Fragment>
                 <Nav/>
-               <OnBord/>
-               <Footer/>
+                <Footer/>
             </Fragment>
         );
     }
 }
 
-export default OnBordPages;
+export default OrderPage;

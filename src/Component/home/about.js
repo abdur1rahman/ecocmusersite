@@ -11,7 +11,6 @@ class About extends Component {
         }
     }
     componentDidMount() {
-        window.scroll(0,0);
         axios.get(AppURL.siteInfo).then(response=>{
             if(response.status==200){
                 let jsondata= (response.data)[0]['about'];

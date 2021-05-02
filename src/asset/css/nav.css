@@ -1,13 +1,12 @@
 .NavBg{
     background: #aa66aa !important;
 }
-.searchBar{
-    margin-left:50px !important;
-    background: #eeeeee;
-    width: 100% !important;
+.form-inline{
+   margin-left: 100px !important;
 }
-.NavIcon{
-    text-align: right;
-    float:right !important;
-    
+
+.navli{
+    text-decoration: none !important;
+    color: rgba(0,0,0,.9) !important;
+
 }

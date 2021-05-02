@@ -73,7 +73,7 @@ class NewAraibal extends Component {
           <Slider ref={c=>(this.slider=c)}  {...settings}>
             <div>
               <Card className="imageBox card1 p-3 m-0">
-                  <img src={ProductItem}/>
+                  <img src={ProductItem} alt="image"/>
                       <Card.Body>
                          <h1 className="productName">T-SHART</h1>
                           <p className="productPrice">Price- 225 </p>
@@ -82,7 +82,7 @@ class NewAraibal extends Component {
             </div>
             <div>
               <Card className="imageBox card1 p-3 m-0">
-                  <img src={ProductItem1}/>
+                  <img src={ProductItem1}alt="image" />
                       <Card.Body>
                          <h1 className="productName">T-SHART</h1>
                           <p className="productPrice">Price- 225 </p>
@@ -91,7 +91,7 @@ class NewAraibal extends Component {
             </div>
             <div>
             <Card className="imageBox card1 p-3 m-0">
-                  <img src={ProductItem2}/>
+                  <img src={ProductItem2} alt="image"/>
                       <Card.Body>
                          <h1 className="productName">T-SHART</h1>
                           <p className="productPrice">Price- 225 </p>
@@ -100,7 +100,7 @@ class NewAraibal extends Component {
             </div>
             <div>
             <Card className="imageBox card1 p-3 m-0">
-                  <img src={ProductItem3}/>
+                  <img src={ProductItem3} alt="image"/>
                       <Card.Body>
                          <h1 className="productName">T-SHART</h1>
                           <p className="productPrice">Price- 225 </p>
@@ -112,7 +112,7 @@ class NewAraibal extends Component {
            
             <div>
             <Card className="imageBox card1 p-3 m-0">
-                  <img src={ProductItem3}/>
+                  <img src={ProductItem3} alt="image"/>
                       <Card.Body>
                          <h1 className="productName">T-SHART</h1>
                           <p className="productPrice">Price- 225 </p>
