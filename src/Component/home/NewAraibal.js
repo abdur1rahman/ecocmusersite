@@ -1,18 +1,23 @@
 import React, {Component} from 'react';
 import { Container,Card,Button} from "react-bootstrap";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
-
+import "slick-carousel/slick/slick.css";
 import ProductItem from "../../asset/images/portfolio-01.jpg";
 import ProductItem1 from "../../asset/images/portfolio-05.jpg";
 import ProductItem2 from "../../asset/images/portfolio-08.jpg";
 import ProductItem3 from "../../asset/images/portfolio-09.jpg";
+import axios from "axios";
+import AppURL from "../api/appURL";
+import {Link} from "react-router-dom";
 
 class NewAraibal extends Component {
   constructor(props){
     super(props)
     this.next=this.next.bind(this);
     this.previous=this.previous.bind(this);
+    this.state={
+        NewAraibalData:[]
+    }
   }
 
   next(){
@@ -21,8 +26,28 @@ class NewAraibal extends Component {
   previous(){
     this.slider.slickPrev();
   }
+  componentDidMount() {
+      axios.get(AppURL.productListByRemark("new")).then(response=>{
+          this.setState({NewAraibalData:response.data})
+
+      }).catch(error=>{
+
+      })
+  }
 
     render() {
+        let NewArrivalList=this.state.NewAraibalData;
+       let newAraibalView= NewArrivalList.map((NewArrivalList,i)=>{
+            return   <div key={i.toString()}>
+                <Card className="imageBox card1 p-3 m-0">
+                    <Link to='/allproduct'><img src={NewArrivalList.image} alt="image"/></Link>
+                    <Card.Body>
+                        <h1 className="productName">{NewArrivalList.title}</h1>
+                        <p className="productPrice">{NewArrivalList.price}TK </p>
+                    </Card.Body>
+                </Card>
+            </div>
+        })
 
         const settings = {
           dots: false,
@@ -71,6 +96,7 @@ class NewAraibal extends Component {
                     </div>
                
           <Slider ref={c=>(this.slider=c)}  {...settings}>
+              {newAraibalView}
             <div>
               <Card className="imageBox card1 p-3 m-0">
                   <img src={ProductItem} alt="image"/>

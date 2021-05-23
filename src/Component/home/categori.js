@@ -27,12 +27,14 @@ class Categori extends Component {
         let mylist=this.state.data;
         let MyView = mylist.map((ParentList,i)=>{
             return   <Col key={i.toString()} xl={3} lg={3} md={3} sm={6} xs-6>
-                <Card className=" card1">
-                    <img src={ParentList.parentcategorImg}/>
-                    <Card.Body>
-                        <h1 className="productName">{ParentList.parentcategoriNameValue}</h1>
-                    </Card.Body>
-                </Card>
+                <Link to={"/ListByCategoriPage/"+ParentList.parentcategoriNameValue}>
+                    <Card className=" card1">
+                        <img src={ParentList.parentcategorImg}/>
+                        <Card.Body>
+                            <h1 className="productName">{ParentList.parentcategoriNameValue}</h1>
+                        </Card.Body>
+                    </Card>
+                </Link>
             </Col>
         })
         return (

@@ -11,3 +11,10 @@
 .colorChoose{
     clear: both;
 }
+.imagepoint img{
+    cursor:pointer !important;
+    float: left;
+}
+.imagepoint img:hover{
+    cursor:pointer;
+}

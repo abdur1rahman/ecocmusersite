@@ -4,9 +4,19 @@ class AppURL {
     static postcontat = this.BasUrl+'postcontat';
     static siteInfo = this.BasUrl+'sitInfo';
     static categori = this.BasUrl+'categoriDetails';
-   // static productlist = this.BasUrl+'productlist';
+
     static  productListByRemark(Remark) {
-        return this.BasUrl+'productlist/'+Remark;
+        return this.BasUrl+'productlistByRemark/'+Remark;
     };
+    static  ProductListByCategory(Category) {
+        return this.BasUrl+'ProductListByCategori/'+Category;
+    };
+    static ProdutListBySubCategory(Category,SubCategory){
+        return this.BasUrl+'productlistBySubCategori/'+Category+'/'+SubCategory;
+    }
+    static Productcode(code){
+        return this.BasUrl+'productdetails/'+code;
+    }
+
 }
 export default AppURL;

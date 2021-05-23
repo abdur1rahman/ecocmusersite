@@ -9,16 +9,15 @@ class Products extends Component {
     constructor() {
         super();
         this.state={
-            ProductData:[]
+            ProductData:[],
+            loaderDiv:"true",
+            mainDiv:"d-none"
         }
     }
     componentDidMount() {
         axios.get(AppURL.productListByRemark("new")).then(response=>{
-            this.setState({ProductData:response.data});
-
-
+            this.setState({ProductData:response.data,loaderDiv:"d-none",mainDiv:""});
         }).catch(error=>{
-
         })
     }
 
@@ -26,7 +25,7 @@ class Products extends Component {
         let productList = this.state.ProductData;
         let productViewList = productList.map((produtView,i)=>{
             return     <Col key={1} xl={2} lg={2} md={2} sm={4} xs-6>
-                <Card className="imageBox card1" >
+                <Card className="imageBox card1 mainDiv" >
                     <Link to='/allproduct'><img src={produtView.image}/></Link>
                     <Card.Body>
                         <h1 className="productName">{produtView.title}</h1>
@@ -45,9 +44,13 @@ class Products extends Component {
                         </Col>
                     </Row>
                 </Container>
-
+                <div className="text-center">
+                    <h3 className={this.state.loaderDiv}>Loading...........</h3>
+                </div>
                 <Container fluid={true} className="mt-5">
-                    <Row>
+
+                    <Row className={this.state.mainDiv}>
+
                         {productViewList}
 
                         <Col xl={2} lg={2} md={2} sm={4} xs-6>
