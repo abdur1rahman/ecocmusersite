@@ -14,7 +14,6 @@ class ProductDetailsPage extends Component {
             loaderDiv:"true",
             mainDiv:"d-none"
         }
-
     }
     componentDidMount() {
 

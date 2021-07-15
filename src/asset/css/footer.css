@@ -1,11 +1,12 @@
 .topFooter{
         font-size: 15px;
-        color: #a6a6a6;
-        font-weight: 300;
+        color: #000000;
+        font-weight: 400;
         font-family: roboto-regular;
 }
 .morinfoFooter{
     text-align: center;
+    color: #000000 !important;
 }
 
 .sectionFooter{
@@ -18,7 +19,7 @@
 }
 .fab{
     color:#aa66aa !important;
-    margin-top: 50px !important;
+    margin-bottom: 30px !important;
     margin-left: 30px !important;
 }
 .addFab{

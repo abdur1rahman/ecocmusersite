@@ -12,6 +12,7 @@
     text-align: center;
     font-weight: 300;
     font-family: roboto-regular;
+    margin-bottom: 3px !important;
 }
 .productName{
     font-size: 18px;

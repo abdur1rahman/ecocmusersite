@@ -4,6 +4,8 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebookSquare} from "@fortawesome/free-brands-svg-icons";
 import {faTwitterSquare} from "@fortawesome/free-brands-svg-icons";
 import {faInstagramSquare} from "@fortawesome/free-brands-svg-icons";
+import {faLinkedin} from "@fortawesome/free-brands-svg-icons";
+import {faPinterest} from "@fortawesome/free-brands-svg-icons";
 import {faSearchLocation} from "@fortawesome/free-solid-svg-icons";
 import {faPhone} from "@fortawesome/free-solid-svg-icons";
 import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
@@ -67,6 +69,8 @@ class Footer extends Component {
                             <Link to={this.state.twiter}  className=" fab h1 m-1 "><FontAwesomeIcon icon={faTwitterSquare}/></Link>
                             <Link to={this.state.facebook}  className=" fab h1 m-1 "><FontAwesomeIcon icon={faFacebookSquare}/></Link>
                             <Link to={this.state.linkdin} className=" fab h1 m-1 "><FontAwesomeIcon icon={faInstagramSquare}/></Link>
+                           <Link  className=" fab h1 m-1 "> <FontAwesomeIcon icon={faLinkedin}/></Link>
+                            <Link  className=" fab h1 m-1 "> <FontAwesomeIcon icon={faPinterest}/></Link>
                         </Col>
                         <Col xl={3} lg={3} md={3} sm={6}xs={6}>
                             <p className="sectionTitle"> OFFICE ADDRES </p>
@@ -84,8 +88,8 @@ class Footer extends Component {
                         </Col>
                         <Col xl={3} lg={3} md={3} sm={6}xs={6}>
                             <p className="sectionTitle">DOWNLOAD APP</p>
-                            <img className='w-50' src={widows} alt='images'/>
-                            <img className='w-25' src={apple} alt='images'/>
+                            <a href="www.plystroe.com"> <img className='w-50' src={widows} alt='images'/></a>
+                            <a href="www.plystroe.com"> <img className='w-25' src={apple} alt='images'/></a>
                         </Col>
                     </Row>
                 </Container>

@@ -7,23 +7,38 @@ import {faMobileAlt} from "@fortawesome/free-solid-svg-icons";
 import {Link} from 'react-router-dom';
 import axios from "axios";
 import AppURL from "../api/appURL";
+import {Redirect} from "react-router";
 
 class Nav extends Component {
-    constructor() {
+    constructor({match}) {
         super();
         this.state={
             data:[],
-            key:[]
+            SearchKey:'',
+            SearchKeyStatusValue:false
         }
+        this.SearchOnchange=this.SearchOnchange.bind(this);
+        this.OnClickSearch=this.OnClickSearch.bind(this);
+        this.SearchRedirect=this.SearchRedirect.bind(this);
     }
     SearchOnchange(event){
-        let SearchKey = event.target.value;
-        this.setState({key:SearchKey})
+        let KeyValue = event.target.value;
+        this.setState({SearchKey:KeyValue});
     }
-    OnSubmit(event){
-        event.PreventDefault();
+    OnClickSearch(){
+       if(this.state.SearchKey.length>=2){
+            this.setState({SearchKeyStatusValue:true});
 
+       }
     }
+    SearchRedirect(){
+        if(this.state.SearchKeyStatusValue===true){
+            return <Redirect to={"/SearchPage/"+this.state.SearchKey} />
+        }
+    }
+
+
+
     componentDidMount() {
         axios.get(AppURL.categori).then(response=>{
                 this.setState({data:response.data})
@@ -54,44 +69,33 @@ class Nav extends Component {
         return (
             <Fragment>
                     <Navbar fixed={'top'} className="NavBg mb-0"  expand="lg">
-                        <Link to='/' className='mr-100'><Navbar.Brand>React-Bootstrap</Navbar.Brand></Link>
+                        <Link to='/' className='mr-100'><Navbar.Brand className="navli">React-Bootstrap</Navbar.Brand></Link>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Col>
-                                <NavDropdown title="Categori" id="basic-nav-dropdown">
 
-                                    <NavDropdown title="WoMan Fachion" id="basic-nav-dropdown">
-                                        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                        <NavDropdown.Item href="#action/3.1">Action1</NavDropdown.Item>
-                                        <NavDropdown.Item href="#action/3.1">Action2</NavDropdown.Item>
-                                    </NavDropdown>
-
-                                    {MyView}
-
-                                </NavDropdown>
-                                <div className="mb-2">
+                                <div className="mb-0">
                                     {[ 'right'].map((direction) => (
                                         <DropdownButton
                                             as={ButtonGroup}
                                             key={direction}
                                             id={`dropdown-button-drop-${direction}`}
                                             drop={direction}
-                                            variant="secondary"
-                                            title={` Drop ${direction} `}
+                                            variant="secondary mt-0"
+                                            title={` Category ${direction} `}
                                         >
                                             <NavDropdown.Item eventKey="1">Action</NavDropdown.Item>
                                             <NavDropdown.Item eventKey="2">Another action</NavDropdown.Item>
-                                            <NavDropdown.Item eventKey="3">Something else here</NavDropdown.Item>
-                                            <NavDropdown.Divider />
-                                            <NavDropdown.Item eventKey="4">Separated link</NavDropdown.Item>
+                                            {MyView}
                                         </DropdownButton>
                                     ))}
                                 </div>
                             </Col>
                             <Col lg={7}>
-                                <Form inline>
+                                <Form inline  method="" enctype="">
                                     <FormControl onChange={this.SearchOnchange} type="text" className="searchBar" placeholder="Search" className="mr-sm-2"/>
-                                    <Button onClick={this.OnSubmit} type='submit'>Search</Button>
+                                    <Button onClick={this.OnClickSearch} variant="secondary" type="button">Search</Button>
+                                  
                                 </Form>
 
                             </Col>
@@ -101,6 +105,7 @@ class Nav extends Component {
                                 <Link className='navli'> <FontAwesomeIcon className='ml-2' icon={faMobileAlt}/> <sup >5 </sup> </Link>
 
                                 <Link to="/loging" className='ml-2 navli'>LOGIN</Link>
+
                                 <Link to="/cardLIst" className='ml-2 navli'>CARD ITEM</Link>
 
                             </Col>
@@ -108,6 +113,7 @@ class Nav extends Component {
                             <Col><div id="google_translate_element"></div></Col>
                         </Navbar.Collapse>
                     </Navbar>
+                {this.SearchRedirect()}
 
 
             </Fragment>

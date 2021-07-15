@@ -16,7 +16,7 @@ class Slider1 extends Component {
             autoplaySpeed: 1000,
             speed: 2000,
             slidesToShow: 3,
-            slidesToScroll: 3,
+            slidesToScroll: 1,
             initialSlide: 0,
             responsive: [
           {

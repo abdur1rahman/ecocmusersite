@@ -17,6 +17,11 @@ class AppURL {
     static Productcode(code){
         return this.BasUrl+'productdetails/'+code;
     }
+    static SearchKey(Key){
+        return this.BasUrl+'ProductSearch/'+Key;
+    }
+    static NotificationHistory=this.BasUrl+'notification';
 
+    static AddToCart=this.BasUrl+'AddToCart';
 }
 export default AppURL;

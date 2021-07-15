@@ -24,7 +24,7 @@ class Callection extends Component {
         let CallectionView = callectionList.map((callectioData,i)=>{
             return    <Col key={i.toString()} xl={3} lg={3} md={3} sm={6} xs={6} className="mb-3">
                 <Card className="imageBox card1">
-                    <Link to='/allproduct'><img src={callectioData.image}/></Link>
+                    <Link to={"/productdetails/"+callectioData.produtcode}><img src={callectioData.image}/></Link>
                     <Card.Body>
                         <h1 className="productName">{callectioData.title}</h1>
                         <p className="productPrice">{callectioData.price}</p>

@@ -7,6 +7,29 @@
 
 .navli{
     text-decoration: none !important;
-    color: rgba(0,0,0,.9) !important;
-
+    color: #f1f1f1;
+}
+.navli:hover{
+    text-decoration: none !important;
+    color: #f1f1f1;
+}
+.navbar-brand{
+    color: #f1f1f1 !important;
+}
+.dropdown-menu{
+    background: #aa66aa !important;
+    color: #f1f1f1 !important;
+    border: 0px !important;
+}
+.dropdown-item{
+    background: none !important;
+}
+.nav-link{
+    color: #f1f1f1 !important;
+}
+a{
+    color: #f1f1f1 !important;
+}
+a:hover{
+    text-decoration: none;
 }

@@ -26,7 +26,7 @@ class Products extends Component {
         let productViewList = productList.map((produtView,i)=>{
             return     <Col key={1} xl={2} lg={2} md={2} sm={4} xs-6>
                 <Card className="imageBox card1 mainDiv" >
-                    <Link to='/allproduct'><img src={produtView.image}/></Link>
+                    <Link to={"/productdetails/"+produtView.produtcode}><img src={produtView.image}/></Link>
                     <Card.Body>
                         <h1 className="productName">{produtView.title}</h1>
                         <p className="productPrice">{produtView.price} TK</p>
@@ -36,7 +36,7 @@ class Products extends Component {
         })
         return (
             <Fragment>
-                <Container className="mt-5">
+                <Container className="mt-3">
                     <Row>
                         <Col xl={12} lg={12} md={12} sm={12} xs={12}>
                             <p className="sectionTitle">FEATURED PRODUCTS</p>

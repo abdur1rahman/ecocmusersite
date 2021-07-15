@@ -40,7 +40,7 @@ class NewAraibal extends Component {
        let newAraibalView= NewArrivalList.map((NewArrivalList,i)=>{
             return   <div key={i.toString()}>
                 <Card className="imageBox card1 p-3 m-0">
-                    <Link to='/allproduct'><img src={NewArrivalList.image} alt="image"/></Link>
+                    <Link to={"/productdetails/"+NewArrivalList.produtcode}><img src={NewArrivalList.image} alt="image"/></Link>
                     <Card.Body>
                         <h1 className="productName">{NewArrivalList.title}</h1>
                         <p className="productPrice">{NewArrivalList.price}TK </p>
@@ -55,7 +55,7 @@ class NewAraibal extends Component {
           autoplay: true,
           autoplaySpeed: 3000,
           speed: 500,
-          slidesToShow: 3,
+          slidesToShow: 4,
           slidesToScroll: 1,
           initialSlide: 0,
           responsive: [
@@ -90,7 +90,7 @@ class NewAraibal extends Component {
                     <p className="sectionTitle">NEW ARRIVAL</p>
 
                     <p className="sectionSubtitle">Some Of Our Exclusive Callecction, You My Like</p>
-                    <div className='text-center'>
+                    <div className='text-center mb-3'>
                           <Button variant="success btn-sm ml-2" onClick={this.previous}>Prev</Button>
                           <Button variant="success btn-sm ml-2" onClick={this.next}>Next</Button>
                     </div>

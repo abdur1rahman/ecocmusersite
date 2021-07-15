@@ -16,6 +16,7 @@ import CardListPage from "../Page/cardListPage";
 import OrderPage from "../Page/OrderPage";
 import ListByCategoriPage from "../Page/listByCategoriPage";
 import ListBySubcategoryPage from "../Page/listBySubcategoryPage";
+import SearchPage from "../Page/SearchPage";
 
 class AppRoute extends Component {
     render() {
@@ -38,8 +39,8 @@ class AppRoute extends Component {
                     <Route exact path='/order' component={OrderPage}/>
                     <Route exact path="/ListByCategoriPage/:Category" component={ListByCategoriPage}/>
                     <Route exact path="/ListBySubCategoryPage/:Category/:SubCategory" component={ListBySubcategoryPage}/>
+                    <Route exact path="/SearchPage/:Key" component={SearchPage}/>
                 </Switch>
-
             </Fragment>
         );
     }
