@@ -8,6 +8,7 @@ import NewAraibal from "../Component/home/NewAraibal";
 import Nav from "../Component/common/Nav";
 import Axios from 'axios';
 import AppURL from "../Component/api/appURL";
+import NavMObile from "../Component/common/NavMObile";
 
 class Home extends Component {
     componentDidMount(){
@@ -24,7 +25,8 @@ class Home extends Component {
     render() {
         return (
             <Fragment>
-                <Nav/>
+                {/*<Nav/>*/}
+                <NavMObile/>
                 <Slider1/>
                 <Products/>
                 <Categori/>

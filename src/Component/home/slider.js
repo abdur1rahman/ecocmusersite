@@ -7,6 +7,7 @@ import ProductItem from "../../asset/images/slide-03-image-01.png";
 import ProductItem1 from "../../asset/images/portfolio-05.jpg";
 import ProductItem2 from "../../asset/images/portfolio-08.jpg";
 import ProductItem3 from "../../asset/images/portfolio-09.jpg";
+
 class Slider1 extends Component {
     render() {
         const settings = {
@@ -62,7 +63,7 @@ class Slider1 extends Component {
                   <img src={ProductItem3} className="slideImg" alt="image" />
             </div>                     
             <div>          
-                  <img src={ProductItem3}className="slideImg" alt="image"/>
+                  <img src={ProductItem2}className="slideImg" alt="image"/>
             </div>
           </Slider>
             </Container>                         

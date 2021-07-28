@@ -23,5 +23,11 @@ class AppURL {
     static NotificationHistory=this.BasUrl+'notification';
 
     static AddToCart=this.BasUrl+'AddToCart';
+    static cartItem=this.BasUrl+'cartlist';
+    static Signup= this.BasUrl+'signup';
+    static onLogin= this.BasUrl+'onLogin';
+    static AddToOrder= this.BasUrl+'AddToOrder';
+    static delete= this.BasUrl+'deleteitem';
+    static orderhistory= this.BasUrl+'orderhistory';
 }
 export default AppURL;

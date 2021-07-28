@@ -35,14 +35,16 @@ class Cocntact extends Component {
         let name = this.state.name;
         let mobile = this.state.mobile;
         let msg = this.state.msg;
+        let contactForm=document.getElementById('contactForm');
         let MyFormData = new FormData();
         MyFormData.append("name",name)
         MyFormData.append("phone",mobile)
         MyFormData.append("messagge",msg)
         axios.post(AppURL.postcontat,MyFormData).then(function (response) {
-            if(response.status==200 && response.data==1){
+            if(response.status==200 && response.data===1){
 
                 alert('sucess');
+                contactForm.reset();
 
 
             }else {
@@ -60,10 +62,10 @@ class Cocntact extends Component {
                 <Container fluid={true} className='contactBg mt-5'>
                     <Row>
                         <Col lg={6} xl={6} md={6} sm={12} xs={12} className='contactStyle'>
-                            <Form  onSubmit={this.OnSubmit}>
-                                <FormControl onChange={this.nameOnchange} typ='text' requird className='contactType' placeholder="type your name"/>
-                                <FormControl onChange={this.mobileOnchange} typ='text 'className='contactType' placeholder="type your Phone"/>
-                                <FormControl onChange={this.msgOnchange} typ='text 'className='contactType' placeholder="type your message"/>
+                            <Form id='contactForm' onSubmit={this.OnSubmit}>
+                                <FormControl onChange={this.nameOnchange} type='text' requird className='contactType' placeholder="type your name"/>
+                                <FormControl onChange={this.mobileOnchange} type='text'className='contactType' placeholder="type your Phone"/>
+                                <FormControl onChange={this.msgOnchange} type='text'className='contactType' placeholder="type your message"/>
                                 <button type='subbmit' className='btn btn-success btn-block  contactType'>send</button>
                             </Form>
                         </Col>

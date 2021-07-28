@@ -1,18 +1,14 @@
 import React, {Component, Fragment} from 'react';
-import {Container, Row, Col, Form, Button,select, option} from "react-bootstrap";
+import {Container, Row, Col,select, option} from "react-bootstrap";
 import ReatDom from "react-dom";
-import productDetails from '../../asset/images/portfolio-05.jpg';
-import sub1 from '../../asset/images/portfolio-08.jpg';
-import sub2 from '../../asset/images/portfolio-09.jpg';
-import sub3 from '../../asset/images/portfolio-08.jpg';
-import sub4 from '../../asset/images/portfolio-05.jpg';
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHeart, faStar,} from "@fortawesome/free-solid-svg-icons";
 import {faShopify, faJediOrder} from "@fortawesome/free-brands-svg-icons";
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import axios from "axios";
 import AppURL from "../api/appURL";
+
 
 class ProductDetails extends Component {
     constructor() {
@@ -21,7 +17,8 @@ class ProductDetails extends Component {
             color:'',
             size:'',
             quantity:'',
-            productCode:''
+            productCode:null,
+            hello:false,
         }
     }
     imageClick(event){
@@ -29,7 +26,6 @@ class ProductDetails extends Component {
         let privewImg=document.getElementById('privewImg');
         ReatDom.findDOMNode(privewImg).setAttribute('src',imgSrc);
     }
-
 
     onChangeColor=(event)=>{
         let ColorValue= event.target.value;
@@ -46,34 +42,35 @@ class ProductDetails extends Component {
         this.setState({quantity:quantityValue});
     }
 
-    AddToCart=()=>{
-            let color= this.state.color;
-            let size= this.state.size;
-            let quantity= this.state.quantity;
-            let product_code= this.state.productCode;
-            let MyFormData= new FormData();
-            MyFormData.append("color",color);
-            MyFormData.append("size",size);
-            MyFormData.append("quantiti",quantity);
-            MyFormData.append("mobileNo",'000');
-            MyFormData.append("product_code","product_code");
-            MyFormData.append("shopName","000");
-            MyFormData.append("ShopCode",'000');
-            axios.post(AppURL.AddToCart,MyFormData).then(response=>{
-                if(response.data===1){
-                    alert('ok');
-                }else {
-                    alert('error');
-                }
-            }).catch(error=>{
-                alert('Error');
-            })
-        }
+
+    AddToCart=(event)=>{
+        let colorSelect= this.state.color;
+        let sizeSelect= this.state.size;
+        let quantitySelect= this.state.quantity;
+        let productCodeSelect= this.state.productCode;
+        let hi=this.state.hello;
+        let MyFormData= new FormData();
+        MyFormData.append('color',colorSelect);
+        MyFormData.append('size',sizeSelect);
+        MyFormData.append('quantity',quantitySelect);
+        MyFormData.append('produtcode',productCodeSelect);
+        axios.post(AppURL.AddToCart,MyFormData).then(response=>{
+            if(response.data===1){
+               let wi = this.setState({hello:true});
+            }else {
+                alert('Item Added Fail')
+            }
+        }).catch(error=>{
+            alert('Item Added Fail')
+        })
+    }
     render() {
+
         let ProductData=this.props.ProductData;
         let  title= ProductData['productlist'][0]['title'];
         let price= ProductData['productlist'][0]['price'];
         let specialprice= ProductData['productlist'][0]['specialprice'];
+        let productcode= ProductData['productlist'][0]['produtcode'];
 
         let des= ProductData['productdetails'][0]['des'];
         let details= ProductData['productdetails'][0]['details'];
@@ -84,8 +81,6 @@ class ProductDetails extends Component {
         let color= ProductData['productdetails'][0]['color'];
         let size= ProductData['productdetails'][0]['size'];
 
-
-
         let colorArray= color.split(',');
         let colorOption = colorArray.map((colorList,i)=>{
             return <option value={colorList}>{colorList}</option>
@@ -94,9 +89,15 @@ class ProductDetails extends Component {
         let sizeOption = SizeArray.map((sizeList,i)=>{
             return <option value={sizeList}>{sizeList}</option>
         })
-
+        if(this.state.productCode===null){
+            this.setState({productCode:productcode})
+        }
+        if(this.state.hello===true){
+            return <Redirect to="/order"/>
+        }
 
         return (
+
             <Fragment>
                 <Container className='mt-5'>
                     <Row>
@@ -109,11 +110,11 @@ class ProductDetails extends Component {
                                <div className="imagepoint"> <img className="imagepoint" onClick={this.imageClick} className='w-25' src={image4} alt='image'/> </div>
                            </div>
 
-                           <h6> DETAILS </h6>
+                           <h6>  DETAILS </h6>
                            <p> {details} </p>
                         </Col>
                         <Col xl={6} lg={6} md={6} sm={12} xs={12}>
-                            <h4 className='mt-5'>{title}</h4>
+                            <h4 className='mt-5'>{productcode} {title}</h4>
                             <p> {des} </p>
                             <div className='productDetailscard'> Regular Price = {price} </div>
                             <div className='productDetailscard'> 50% Discount = {specialprice} </div>
@@ -143,31 +144,32 @@ class ProductDetails extends Component {
                                     <option value="04" >04</option>
                                 </select>
                             </div>
-                                <Link  onClick={this.AddToCart} className='btn btn-danger btn-sm m-2 p-2' > <FontAwesomeIcon icon={faShopify}/> Add to Card </Link>
-                                <Link to='/order'  className='btn btn-success btn-sm m-2 p-2'  ><FontAwesomeIcon icon={faJediOrder}/> Order Now </Link>
+                                <Link  onClick={this.AddToCart} className='btn btn-success btn-sm m-2 p-2' > <FontAwesomeIcon icon={faShopify}/> Add to Card </Link>
+                                <Link  onClick={this.AddToCart}  className='btn btn-success btn-sm m-2 p-2'  ><FontAwesomeIcon icon={faJediOrder}/> Order Now </Link>
                                 <Link to='/feverite' className='btn btn-success btn-sm m-2 p-2'><FontAwesomeIcon icon={faHeart}/> Favourite </Link>
                             <h6 className='mt-3'>REVIEW</h6>
                             <h6 className='colorChoose'>
                                 Abdur Rahman
-                                <FontAwesomeIcon icon={faStar}/>
-                                <FontAwesomeIcon icon={faStar}/>
-                                <FontAwesomeIcon icon={faStar}/>
-                                <FontAwesomeIcon icon={faStar}/>
-                                <FontAwesomeIcon icon={faStar}/>
+                                <FontAwesomeIcon className='Revewstart' icon={faStar}/>
+                                <FontAwesomeIcon className='Revewstart' icon={faStar}/>
+                                <FontAwesomeIcon className='Revewstart' icon={faStar}/>
+                                <FontAwesomeIcon className='Revewstart' icon={faStar}/>
+                                <FontAwesomeIcon className='Revewstart' icon={faStar}/>
                              </h6>
                             <p>Lorem icocn dolar site responsive qality full web site Lorem icocn dolar site responsive qality full web site </p>
                             <h6 className=''>
                                 Abdur Rahman
-                                <FontAwesomeIcon icon={faStar}/>
-                                <FontAwesomeIcon icon={faStar}/>
-                                <FontAwesomeIcon icon={faStar}/>
-                                <FontAwesomeIcon icon={faStar}/>
-                                <FontAwesomeIcon icon={faStar}/>
+                                <FontAwesomeIcon className='Revewstart' icon={faStar}/>
+                                <FontAwesomeIcon className='Revewstart' icon={faStar}/>
+                                <FontAwesomeIcon className='Revewstart' icon={faStar}/>
+                                <FontAwesomeIcon className='Revewstart' icon={faStar}/>
+                                <FontAwesomeIcon className='Revewstart' icon={faStar}/>
                             </h6>
                             <p>Lorem icocn dolar site responsive qality full web site Lorem icocn dolar site responsive qality full web site </p>
                         </Col>
                     </Row>
                 </Container>
+
             </Fragment>
         );
     }

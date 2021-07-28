@@ -1,7 +1,4 @@
 import React, {Component, Fragment} from 'react';
-import axios from "axios";
-import AppURL from "../api/appURL";
-import Categori from "../home/categori";
 import {Card, Col, Container, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
 

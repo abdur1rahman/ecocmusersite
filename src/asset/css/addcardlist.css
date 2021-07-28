@@ -1,2 +1,5 @@
 
-
+.deleteItem{
+    cursor:pointer !important;
+    color: #ffffff;
+}

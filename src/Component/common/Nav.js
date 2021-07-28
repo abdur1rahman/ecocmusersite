@@ -3,7 +3,7 @@ import {Col, Row, Navbar, NavDropdown, Form, FormControl, Button, Container, Dro
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBell, faIdCard} from "@fortawesome/free-solid-svg-icons";
 import {faHeart} from "@fortawesome/free-solid-svg-icons";
-import {faMobileAlt} from "@fortawesome/free-solid-svg-icons";
+import {faSignOutAlt} from "@fortawesome/free-solid-svg-icons";
 import {Link} from 'react-router-dom';
 import axios from "axios";
 import AppURL from "../api/appURL";
@@ -102,11 +102,10 @@ class Nav extends Component {
                             <Col lg={5}>
                                 <Link to="/notifi" className='navli'> <FontAwesomeIcon className='ml-2' icon={faBell}/> <sup> 5 </sup> </Link>
                                 <Link to="/feverite" className='navli'><FontAwesomeIcon className='ml-2' icon={faHeart}/> <sup> 5 </sup> </Link>
-                                <Link className='navli'> <FontAwesomeIcon className='ml-2' icon={faMobileAlt}/> <sup >5 </sup> </Link>
+                                <Link className='navli'> <FontAwesomeIcon className='ml-2' title="Logout"  icon={faSignOutAlt}/> </Link>
 
-                                <Link to="/loging" className='ml-2 navli'>LOGIN</Link>
-
-                                <Link to="/cardLIst" className='ml-2 navli'>CARD ITEM</Link>
+                                <Link to="/loging" className='ml-2 navli'>Login</Link>
+                                <Link to="/cardLIst" className='ml-2 navli'>Card Item</Link>
 
                             </Col>
 
@@ -114,7 +113,6 @@ class Nav extends Component {
                         </Navbar.Collapse>
                     </Navbar>
                 {this.SearchRedirect()}
-
 
             </Fragment>
         );

@@ -1,21 +1,18 @@
 import React, {Component, Fragment} from 'react';
+import Signup from "../Component/common/signup";
 import Nav from "../Component/common/Nav";
 import Footer from "../Component/common/Footer";
-import Addcardlist from "../Component/common/addcardlist";
 
-class CardListPage extends Component {
-    componentDidMount() {
-        window.scroll(0,0);
-    }
+class SignupPage extends Component {
     render() {
         return (
             <Fragment>
                 <Nav/>
-                    <Addcardlist/>
+                <Signup/>
                 <Footer/>
             </Fragment>
         );
     }
 }
 
-export default CardListPage;
+export default SignupPage;
