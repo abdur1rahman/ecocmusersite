@@ -66,12 +66,41 @@ class NavMObile extends Component {
 
         return (
             <Fragment>
-                <Navbar fixed={'top'} className="NavBg mb-0 text-center"  expand="lg">
+                <Navbar fixed={'top'} className="NavBg mb-0 "  expand="lg">
                     <Link to='/' className='mr-100'><Navbar.Brand className="navli">React-Bootstrap</Navbar.Brand></Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <input type='text' className='form-control m-1'/>
-                        <button className='btn btn-success btn-block m-1'>Search</button>
+                        <div className="mt-2">
+                            <input  onChange={this.SearchOnchange} type="text"placeholder="search hear"/>
+                            <input onClick={this.OnClickSearch}  type="submit"/>
+                        </div>
+                        <div className="mt-2">
+                            <Link to="/notifi" className='navli'> <FontAwesomeIcon className='ml-2' icon={faBell}/> <sup> 5 </sup> </Link>
+                            <Link to="/feverite" className='navli'><FontAwesomeIcon className='ml-2' icon={faHeart}/> <sup> 5 </sup> </Link>
+                            <Link className='navli'> <FontAwesomeIcon className='ml-2' title="Logout"  icon={faSignOutAlt}/> </Link>
+
+                            <Link to="/loging" className='ml-2 navli'>Login</Link>
+                            <Link to="/cardLIst" className='ml-2 navli'>Card Item</Link>
+                        </div>
+
+                        <div className="mt-2">
+                            {[ 'right'].map((direction) => (
+                                <DropdownButton
+                                    className="formnav"
+                                    as={ButtonGroup}
+                                    key={direction}
+                                    id={`dropdown-button-drop-${direction}`}
+                                    drop={direction}
+                                    variant="secondary"
+                                    title={` Category ${direction} `}
+                                >
+                                    <NavDropdown.Item eventKey="1">Action</NavDropdown.Item>
+                                    <NavDropdown.Item eventKey="2">Another action</NavDropdown.Item>
+                                    {MyView}
+                                </DropdownButton>
+                            ))}
+                        </div>
+
                     </Navbar.Collapse>
                 </Navbar>
                 {this.SearchRedirect()}

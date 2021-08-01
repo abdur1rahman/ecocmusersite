@@ -3,6 +3,7 @@ import Footer from "../Component/common/Footer";
 import About from "../Component/home/about";
 import Nav from "../Component/common/Nav";
 import BadcomNav from "../Component/common/BadcomNav";
+import NavMObile from "../Component/common/NavMObile";
 
 class AboutPage extends Component {
     componentDidMount(){
@@ -12,7 +13,12 @@ class AboutPage extends Component {
         return (
             <Fragment>
 
-                <Nav/>
+                <div className="desktop" >
+                    <Nav/>
+                </div>
+                <div className="mobile" >
+                    <NavMObile/>
+                </div>
                 <BadcomNav/>
                 <About/>
                 <Footer/>

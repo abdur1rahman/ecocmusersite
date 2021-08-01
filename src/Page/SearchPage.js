@@ -4,6 +4,7 @@ import Footer from "../Component/common/Footer";
 import axios from "axios";
 import AppURL from "../Component/api/appURL";
 import SearchComponent from "../Component/common/SearchComponent";
+import NavMObile from "../Component/common/NavMObile";
 
 class SearchPage extends Component {
     constructor({match}) {
@@ -24,7 +25,12 @@ class SearchPage extends Component {
     render() {
         return (
             <Fragment>
-                <Nav/>
+                <div className="desktop" >
+                    <Nav/>
+                </div>
+                <div className="mobile" >
+                    <NavMObile/>
+                </div>
                  <SearchComponent ProductData={this.state.ProductData} SearchKey={this.state.SearchKey}/>
                 <Footer/>
             </Fragment>

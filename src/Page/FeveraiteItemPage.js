@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import Nav from "../Component/common/Nav";
 import Footer from "../Component/common/Footer";
 import Faverite from "../Component/common/Faverite";
+import NavMObile from "../Component/common/NavMObile";
 
 class FeveraiteItemPage extends Component {
     componentDidMount() {
@@ -10,7 +11,12 @@ class FeveraiteItemPage extends Component {
     render() {
         return (
             <Fragment>
-                <Nav/>
+                <div className="desktop" >
+                    <Nav/>
+                </div>
+                <div className="mobile" >
+                    <NavMObile/>
+                </div>
                 <Faverite/>
                 <Footer/>
             </Fragment>

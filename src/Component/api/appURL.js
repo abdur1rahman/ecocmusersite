@@ -29,5 +29,6 @@ class AppURL {
     static AddToOrder= this.BasUrl+'AddToOrder';
     static delete= this.BasUrl+'deleteitem';
     static orderhistory= this.BasUrl+'orderhistory';
+    static RemoveOrderhistory=this.BasUrl+'RemoveOrder';
 }
 export default AppURL;

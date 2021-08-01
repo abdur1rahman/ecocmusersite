@@ -4,6 +4,7 @@ import Footer from "../Component/common/Footer";
 import ProductDetails from "../Component/common/productDetails";
 import axios from "axios";
 import AppURL from "../Component/api/appURL";
+import NavMObile from "../Component/common/NavMObile";
 
 class ProductDetailsPage extends Component {
     constructor({match}) {
@@ -38,7 +39,12 @@ class ProductDetailsPage extends Component {
             }else {
                 return (
                     <Fragment>
-                        <Nav/>
+                        <div className="desktop" >
+                            <Nav/>
+                        </div>
+                        <div className="mobile" >
+                            <NavMObile/>
+                        </div>
                         <ProductDetails  ProductData={this.state.ProductData} />
                         <Footer/>
                     </Fragment>

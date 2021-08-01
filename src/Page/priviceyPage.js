@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import Priviccy from "../Component/home/priviccy";
 import Footer from "../Component/common/Footer";
 import Nav from "../Component/common/Nav";
+import NavMObile from "../Component/common/NavMObile";
 
 class PriviceyPage extends Component {
     componentDidMount() {
@@ -10,7 +11,12 @@ class PriviceyPage extends Component {
     render() {
         return (
             <Fragment>
-                <Nav/>
+                <div className="desktop" >
+                    <Nav/>
+                </div>
+                <div className="mobile" >
+                    <NavMObile/>
+                </div>
                 <Priviccy/>
                 <Footer/>
             </Fragment>

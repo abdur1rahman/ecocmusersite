@@ -4,6 +4,7 @@ import ListBySubCategori from "../Component/common/listBySubCategori";
 import Footer from "../Component/common/Footer";
 import axios from "axios";
 import AppURL from "../Component/api/appURL";
+import NavMObile from "../Component/common/NavMObile";
 
 class ListBySubcategoryPage extends Component {
     constructor({match}) {
@@ -26,7 +27,12 @@ class ListBySubcategoryPage extends Component {
     render() {
         return (
             <Fragment>
-                <Nav/>
+                <div className="desktop" >
+                    <Nav/>
+                </div>
+                <div className="mobile" >
+                    <NavMObile/>
+                </div>
                 <ListBySubCategori SubCategory={this.state.SubCategory} ProductData={this.state.ProductData} />
                 <Footer/>
             </Fragment>

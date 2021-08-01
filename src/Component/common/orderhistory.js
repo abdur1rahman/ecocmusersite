@@ -18,6 +18,17 @@ class Orderhistory extends Component {
 
         })
     }
+    deleteOrder=()=>{
+        axios.post(AppURL.RemoveOrderhistory).then(response=>{
+            if(response.data===1){
+                alert('Remove success');
+            }else {
+                alert('Remove Not success');
+            }
+        }).catch(error=>{
+            alert('Remove NO  success');
+        })
+    }
 
     render() {
         let orderhistoryData=this.state.orderhistoryData;
@@ -31,6 +42,7 @@ class Orderhistory extends Component {
                 <td>{historyData.name}</td>
                 <td>{historyData.productinfo}</td>
                 <td>{historyData.orderstatus}</td>
+                <td><button onClick={this.deleteOrder} className='btn btn-sm btn-danger' >Delete</button></td>
             </tr>
         })
 
@@ -51,18 +63,19 @@ class Orderhistory extends Component {
                                    <th>product Price</th>
                                    <th>Product info</th>
                                    <th>Order Status</th>
+                                   <th>Order Cencel</th>
                                </tr>
                                </thead>
                                <tbody>
 
                                    {historyView}
 
-
                                </tbody>
                            </Table>
                        </Col>
                    </Row>
                </Container>
+                {this.componentDidMount()}
             </Fragment>
         );
     }

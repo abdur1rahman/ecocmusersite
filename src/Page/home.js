@@ -25,8 +25,13 @@ class Home extends Component {
     render() {
         return (
             <Fragment>
-                {/*<Nav/>*/}
-                <NavMObile/>
+                <div className="desktop" >
+                    <Nav/>
+                </div>
+                <div className="mobile" >
+                    <NavMObile/>
+                </div>
+
                 <Slider1/>
                 <Products/>
                 <Categori/>

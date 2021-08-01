@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Container,Card,Button} from "react-bootstrap";
+import { Container} from "react-bootstrap";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 
@@ -51,19 +51,19 @@ class Slider1 extends Component {
             <Container fluid={true} className="mt-5 p-0  ">
             <Slider ref={c=>(this.slider=c)}  {...settings}>
             <div>              
-                  <img className="slideImg" src={ProductItem} alt="image"/>
+                  <img className="slideImg" src={ProductItem} alt=""/>
             </div>
             <div>            
-                  <img src={ProductItem1} className="slideImg" alt="image" />
+                  <img src={ProductItem1} className="slideImg" alt="" />
             </div>
             <div>         
-                  <img src={ProductItem2} className="slideImg" alt="image"/>
+                  <img src={ProductItem2} className="slideImg" alt=""/>
             </div>
             <div>     
-                  <img src={ProductItem3} className="slideImg" alt="image" />
+                  <img src={ProductItem3} className="slideImg" alt="" />
             </div>                     
             <div>          
-                  <img src={ProductItem2}className="slideImg" alt="image"/>
+                  <img src={ProductItem2}className="slideImg" alt=""/>
             </div>
           </Slider>
             </Container>                         

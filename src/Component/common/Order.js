@@ -26,7 +26,7 @@ class Order extends Component {
         axios.get(AppURL.cartItem).then(res=>{
           this.setState({CartData:res.data})
         }).catch(erro=>{
-            alert('Try again')
+            //alert('Try again')
         })
     }
     nameOnChange=(event)=>{
@@ -79,7 +79,7 @@ class Order extends Component {
  RemoveItem=()=>{
      axios.post(AppURL.delete).then(response=>{
          if(response.data===1){
-            this.setState({deleteRifresh:true})
+            //this.setState({deleteRifresh:true})
          }else {
              alert('Remove error')
          }
@@ -89,15 +89,13 @@ class Order extends Component {
     })
  }
 
- PageRefresh=()=>{
-     if(this.state.deleteRifresh===true){
-         let URL= window.location;
-         return
-
-           //  <Redirect to={URL}/>
-
-     }
- }
+ // PageRefresh=()=>{
+ //     if(this.state.deleteRifresh===true){
+ //         let URL= window.location;
+ //         return <Redirect to={URL}/>
+ //
+ //     }
+ // }
 
     render() {
 
@@ -118,7 +116,7 @@ class Order extends Component {
 
                     <h6> Price={cart.product_quantity} x {cart.unit_price} = {cart.total_price} TK </h6>
 
-                   <button className='btn btn-danger btn-sm' dataId={cart.id} >
+                   <button className='btn btn-success' >
                        <FontAwesomeIcon className="deleteItem"  onClick={this.RemoveItem} title='Remove Item' icon={faTrash}/></button>
                 </Col>
             </Row>
@@ -128,7 +126,7 @@ class Order extends Component {
             <Fragment>
                 <Container className='mt-5 pt-2' fluid={false}>
                    <h4 className='text-center mb-5'> ORDER PAGE</h4>
-                    <Row className=''>
+                    <Row>
                         <Col xl={6} lg={6} md={6} sm={12}>
 
                             {cartview}
@@ -161,7 +159,7 @@ class Order extends Component {
                         </Col>
                     </Row>
                 </Container>
-                {this.PageRefresh()}
+                {this.componentDidMount()}
             </Fragment>
         );
     }

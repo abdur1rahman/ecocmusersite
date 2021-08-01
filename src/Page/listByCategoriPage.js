@@ -4,6 +4,7 @@ import Nav from "../Component/common/Nav";
 import ListByCategori from "../Component/common/listByCategori";
 import axios from "axios";
 import AppURL from "../Component/api/appURL";
+import NavMObile from "../Component/common/NavMObile";
 
 class ListByCategoriPage extends Component {
     constructor({match}) {
@@ -28,7 +29,12 @@ class ListByCategoriPage extends Component {
     render() {
         return (
             <Fragment>
-                <Nav/>
+                <div className="desktop" >
+                    <Nav/>
+                </div>
+                <div className="mobile" >
+                    <NavMObile/>
+                </div>
                 <ListByCategori Category={this.state.Category}  ProductData={this.state.ProductData} />
                 <Footer/>
 

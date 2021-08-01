@@ -1,8 +1,8 @@
 import React, {Component, Fragment} from 'react';
-import {Col,Row,Container,Form, FormControl,Button} from "react-bootstrap";
+import {Col,Row,Container,Form, FormControl} from "react-bootstrap";
 import axios from "axios";
 import AppURL from "../api/appURL";
-import Validation from "../common/validation";
+
 
 
 class Cocntact extends Component {
@@ -41,7 +41,7 @@ class Cocntact extends Component {
         MyFormData.append("phone",mobile)
         MyFormData.append("messagge",msg)
         axios.post(AppURL.postcontat,MyFormData).then(function (response) {
-            if(response.status==200 && response.data===1){
+            if(response.status===200 && response.data===1){
 
                 alert('sucess');
                 contactForm.reset();
