@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
-import {Col, Row, Navbar, NavDropdown, Form, FormControl, Button, Container, DropdownButton, ButtonGroup,} from "react-bootstrap";
+import {Col, Navbar, NavDropdown, Form, FormControl, Button, DropdownButton, ButtonGroup,} from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faBell, faIdCard} from "@fortawesome/free-solid-svg-icons";
+import {faBell,} from "@fortawesome/free-solid-svg-icons";
 import {faHeart} from "@fortawesome/free-solid-svg-icons";
 import {faSignOutAlt} from "@fortawesome/free-solid-svg-icons";
 import {Link} from 'react-router-dom';
@@ -28,7 +28,6 @@ class Nav extends Component {
     OnClickSearch(){
        if(this.state.SearchKey.length>=2){
             this.setState({SearchKeyStatusValue:true});
-
        }
     }
     SearchRedirect(){
@@ -37,16 +36,12 @@ class Nav extends Component {
         }
     }
 
-
-
     componentDidMount() {
         axios.get(AppURL.categori).then(response=>{
                 this.setState({data:response.data})
         }).catch(error=>{
         })
     }
-
-
     render() {
         let mylist=this.state.data;
         let MyView = mylist.map((ParentList,i)=>{
@@ -73,7 +68,6 @@ class Nav extends Component {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Col>
-
                                 <div className="mb-0">
                                     {[ 'right'].map((direction) => (
                                         <DropdownButton
@@ -95,25 +89,19 @@ class Nav extends Component {
                                 <Form inline  method="" enctype="">
                                     <FormControl onChange={this.SearchOnchange} type="text" className="searchBar" placeholder="Search" className="mr-sm-2"/>
                                     <Button onClick={this.OnClickSearch} variant="secondary" type="button">Search</Button>
-                                  
                                 </Form>
-
                             </Col>
                             <Col lg={5}>
                                 <Link to="/notifi" className='navli'> <FontAwesomeIcon className='ml-2' icon={faBell}/> <sup> 5 </sup> </Link>
                                 <Link to="/feverite" className='navli'><FontAwesomeIcon className='ml-2' icon={faHeart}/> <sup> 5 </sup> </Link>
                                 <Link className='navli'> <FontAwesomeIcon className='ml-2' title="Logout"  icon={faSignOutAlt}/> </Link>
-
                                 <Link to="/loging" className='ml-2 navli'>Login</Link>
-                                <Link to="/cardLIst" className='ml-2 navli'>Card Item</Link>
-
+                                <Link to="/order" className='ml-2 navli'>Card Item</Link>
                             </Col>
-
                             <Col><div id="google_translate_element"></div></Col>
                         </Navbar.Collapse>
                     </Navbar>
                 {this.SearchRedirect()}
-
             </Fragment>
         );
     }

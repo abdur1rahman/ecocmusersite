@@ -20,8 +20,6 @@ class Notifiction extends Component {
                     <Row>
                         {NotificationView}
 
-
-
                     </Row>
                 </Container>
 

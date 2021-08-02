@@ -39,8 +39,8 @@ class NewAraibal extends Component {
         let NewArrivalList=this.state.NewAraibalData;
        let newAraibalView= NewArrivalList.map((NewArrivalList,i)=>{
             return   <div key={i.toString()}>
-                <Card className="imageBox card1 p-3 m-0">
-                    <Link to={"/productdetails/"+NewArrivalList.produtcode}><img src={NewArrivalList.image} alt="image"/></Link>
+                <Card className="imageBox card1 p-3 mb-3">
+                    <Link to={"/productdetails/"+NewArrivalList.produtcode}><img src={NewArrivalList.image} alt=""/></Link>
                     <Card.Body>
                         <h1 className="productName">{NewArrivalList.title}</h1>
                         <p className="productPrice">{NewArrivalList.price}TK </p>
@@ -55,14 +55,14 @@ class NewAraibal extends Component {
           autoplay: true,
           autoplaySpeed: 3000,
           speed: 500,
-          slidesToShow: 4,
+          slidesToShow: 6,
           slidesToScroll: 1,
           initialSlide: 0,
           responsive: [
         {
           breakpoint: 1024,
           settings: {
-            slidesToShow: 4,
+            slidesToShow: 6,
             slidesToScroll: 1,
             infinite: true,
             dots: false,
@@ -99,7 +99,7 @@ class NewAraibal extends Component {
               {newAraibalView}
             <div>
               <Card className="imageBox card1 p-3 m-0">
-                  <img src={ProductItem} alt="image"/>
+                  <img src={ProductItem} alt=""/>
                       <Card.Body>
                          <h1 className="productName">T-SHART</h1>
                           <p className="productPrice">Price- 225 </p>
@@ -108,7 +108,7 @@ class NewAraibal extends Component {
             </div>
             <div>
               <Card className="imageBox card1 p-3 m-0">
-                  <img src={ProductItem1}alt="image" />
+                  <img src={ProductItem1} alt='' />
                       <Card.Body>
                          <h1 className="productName">T-SHART</h1>
                           <p className="productPrice">Price- 225 </p>
@@ -117,7 +117,7 @@ class NewAraibal extends Component {
             </div>
             <div>
             <Card className="imageBox card1 p-3 m-0">
-                  <img src={ProductItem2} alt="image"/>
+                  <img src={ProductItem2} alt=""/>
                       <Card.Body>
                          <h1 className="productName">T-SHART</h1>
                           <p className="productPrice">Price- 225 </p>
@@ -126,7 +126,7 @@ class NewAraibal extends Component {
             </div>
             <div>
             <Card className="imageBox card1 p-3 m-0">
-                  <img src={ProductItem3} alt="image"/>
+                  <img src={ProductItem3} alt=""/>
                       <Card.Body>
                          <h1 className="productName">T-SHART</h1>
                           <p className="productPrice">Price- 225 </p>
@@ -138,7 +138,7 @@ class NewAraibal extends Component {
            
             <div>
             <Card className="imageBox card1 p-3 m-0">
-                  <img src={ProductItem3} alt="image"/>
+                  <img src={ProductItem3} alt=""/>
                       <Card.Body>
                          <h1 className="productName">T-SHART</h1>
                           <p className="productPrice">Price- 225 </p>

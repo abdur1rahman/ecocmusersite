@@ -12,7 +12,7 @@ class Refunpolicy extends Component {
     }
     componentDidMount() {
         axios.get(AppURL.siteInfo).then(response=>{
-            if(response.status==200){
+            if(response.status===200){
                 let jsondata= (response.data)[0]['refunpolicy'];
                 this.setState({refunpolicy:jsondata});
             }else {

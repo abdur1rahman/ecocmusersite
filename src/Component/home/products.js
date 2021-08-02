@@ -24,7 +24,7 @@ class Products extends Component {
     render() {
         let productList = this.state.ProductData;
         let productViewList = productList.map((produtView,i)=>{
-            return     <Col key={1} xl={2} lg={2} md={2} sm={4} xs-6>
+            return     <Col key={1} xl={2} lg={2} md={2} sm={6} xs={6} className="mb-3">
                 <Card className="imageBox card1 mainDiv" >
                     <Link to={"/productdetails/"+produtView.produtcode}><img src={produtView.image} alt=''/></Link>
                     <Card.Body>
@@ -53,16 +53,8 @@ class Products extends Component {
 
                         {productViewList}
 
-                        <Col xl={2} lg={2} md={2} sm={4} xs-6>
-                            <Card className="imageBox card1" >
-                                <Link to='/allproduct'><img src={ProductItem} alt=""/></Link>
-                                <Card.Body>
-                                    <h1 className="productName">T-SHART</h1>
-                                    <p className="productPrice">Price- 225 </p>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col xl={2} lg={2} md={2} sm={4} xs-6>
+
+                        <Col xl={2} lg={2} md={2} sm={4} xs={6}>
                             <Card className="imageBox card1">
                                 <img src={ProductItem} alt=""/>
                                 <Card.Body>

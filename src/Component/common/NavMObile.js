@@ -2,7 +2,7 @@ import React, {Component, Fragment} from 'react';
 import {Redirect} from "react-router";
 import axios from "axios";
 import AppURL from "../api/appURL";
-import {Button, ButtonGroup, Col, DropdownButton, Form, FormControl, Navbar, NavDropdown} from "react-bootstrap";
+import {ButtonGroup, DropdownButton, Navbar, NavDropdown} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBell, faHeart, faSignOutAlt} from "@fortawesome/free-solid-svg-icons";
@@ -80,7 +80,7 @@ class NavMObile extends Component {
                             <Link className='navli'> <FontAwesomeIcon className='ml-2' title="Logout"  icon={faSignOutAlt}/> </Link>
 
                             <Link to="/loging" className='ml-2 navli'>Login</Link>
-                            <Link to="/cardLIst" className='ml-2 navli'>Card Item</Link>
+                            <Link to="/order" className='ml-2 navli'>Card Item</Link>
                         </div>
 
                         <div className="mt-2">

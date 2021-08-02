@@ -8,9 +8,9 @@ class SearchComponent extends Component {
         let ProductData=this.props.ProductData;
         let SearchKey= this.props.SearchKey;
         let MyView=ProductData.map((ProductSearchc,i)=>{
-            return <Col key={i.toString()} xl={2} lg={2} md={2} sm={4} xs-6>
+            return <Col key={i.toString()} xl={2} lg={2} md={2} sm={4} xs={6} className="mb-3">
                 <Card className="imageBox card1">
-                    <Link to={"/productdetails/"+ProductSearchc.produtcode}> <img src={ProductSearchc.image}/></Link>
+                    <Link to={"/productdetails/"+ProductSearchc.produtcode}> <img src={ProductSearchc.image} alt=""/></Link>
                     <Card.Body>
                         <h1 className="productName">{ProductSearchc.title}</h1>
                         <p className="productPrice">{ProductSearchc.price} TK</p>

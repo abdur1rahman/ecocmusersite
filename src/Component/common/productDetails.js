@@ -18,7 +18,7 @@ class ProductDetails extends Component {
             size:'',
             quantity:'',
             productCode:null,
-            hello:false,
+            RedirectOrderpage:false,
         }
     }
     imageClick(event){
@@ -48,7 +48,6 @@ class ProductDetails extends Component {
         let sizeSelect= this.state.size;
         let quantitySelect= this.state.quantity;
         let productCodeSelect= this.state.productCode;
-        let hi=this.state.hello;
         let MyFormData= new FormData();
         MyFormData.append('color',colorSelect);
         MyFormData.append('size',sizeSelect);
@@ -56,7 +55,7 @@ class ProductDetails extends Component {
         MyFormData.append('produtcode',productCodeSelect);
         axios.post(AppURL.AddToCart,MyFormData).then(response=>{
             if(response.data===1){
-               let wi = this.setState({hello:true});
+                this.setState({RedirectOrderpage:true});
             }else {
                 alert('Item Added Fail')
             }
@@ -92,7 +91,7 @@ class ProductDetails extends Component {
         if(this.state.productCode===null){
             this.setState({productCode:productcode})
         }
-        if(this.state.hello===true){
+        if(this.state.RedirectOrderpage===true){
             return <Redirect to="/order"/>
         }
 
@@ -102,12 +101,12 @@ class ProductDetails extends Component {
                 <Container className='mt-5'>
                     <Row>
                         <Col xl={6} lg={6} md={6} sm={12} xs={12}className='5'>
-                           <img onClick={this.imag}  id="privewImg" className='w-100 mt-5' src={image} alt='image'/>
+                           <img onClick={this.imag}  id="privewImg" className='w-100 mt-5' src={image} alt=''/>
                            <div className='mt-4'>
-                               <div className="imagepoint"> <img onClick={this.imageClick} className='w-25' src={image} alt='image'/> </div>
-                               <div className="imagepoint"> <img className="imagepoint" onClick={this.imageClick} className='w-25' src={image2} alt='image'/> </div>
-                               <div className="imagepoint"> <img className="imagepoint" onClick={this.imageClick} className='w-25' src={image3} alt='image'/> </div>
-                               <div className="imagepoint"> <img className="imagepoint" onClick={this.imageClick} className='w-25' src={image4} alt='image'/> </div>
+                               <div className="imagepoint"> <img onClick={this.imageClick} className='w-25' src={image} alt=''/> </div>
+                               <div className="imagepoint"> <img className="imagepoint" onClick={this.imageClick} className='w-25' src={image2} alt=''/> </div>
+                               <div className="imagepoint"> <img className="imagepoint" onClick={this.imageClick} className='w-25' src={image3} alt=''/> </div>
+                               <div className="imagepoint"> <img className="imagepoint" onClick={this.imageClick} className='w-25' src={image4} alt=''/> </div>
                            </div>
 
                            <h6>  DETAILS </h6>

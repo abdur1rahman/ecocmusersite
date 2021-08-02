@@ -13,7 +13,7 @@ class ListBySubCategori extends Component {
         const MyView=MyList.map((ProductList,i)=>{
             return <Col key={i.toString()} xl={2} lg={2} md={2} sm={4} xs-6>
                 <Card className="imageBox card1">
-                    <Link to={"/productdetails/"+ProductList.produtcode}><img src={ProductList.image}/></Link>
+                    <Link to={"/productdetails/"+ProductList.produtcode}><img src={ProductList.image} alt=""/></Link>
                     <Card.Body>
                         <h1 className="productName">{ProductList.title}</h1>
                         <p className="productPrice">{ProductList.price} TK</p>

@@ -4,6 +4,7 @@ import ProductItem from "../../asset/images/portfolio-09.jpg";
 import {Link} from "react-router-dom";
 import axios from "axios";
 import AppURL from "../api/appURL";
+
 class Callection extends Component {
     constructor() {
         super();
@@ -22,9 +23,9 @@ class Callection extends Component {
     render() {
         let callectionList=this.state.callectionData;
         let CallectionView = callectionList.map((callectioData,i)=>{
-            return    <Col key={i.toString()} xl={3} lg={3} md={3} sm={6} xs={6} className="mb-3">
+            return    <Col key={i.toString()} xl={2} lg={2} md={2} sm={6} xs={6} className="mb-3">
                 <Card className="imageBox card1">
-                    <Link to={"/productdetails/"+callectioData.produtcode}><img src={callectioData.image}/></Link>
+                    <Link to={"/productdetails/"+callectioData.produtcode}><img src={callectioData.image} alt=""/></Link>
                     <Card.Body>
                         <h1 className="productName">{callectioData.title}</h1>
                         <p className="productPrice">{callectioData.price}</p>
@@ -54,25 +55,7 @@ class Callection extends Component {
 
                         <Col xl={3} lg={3} md={3} sm={6} xs={6} className="mb-3">
                             <Card className="imageBox card1">
-                                <img src={ProductItem}/>
-                                <Card.Body>
-                                    <h1 className="productName">T-SHART</h1>
-                                    <p className="productPrice">Price- 225 </p>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col xl={3} lg={3} md={3} sm={6} xs={6}className="mb-3">
-                            <Card className="imageBox card1">
-                                <Link to='/allcallection'> <img src={ProductItem}/></Link>
-                                <Card.Body>
-                                    <h1 className="productName">T-SHART</h1>
-                                    <p className="productPrice">Price- 225 </p>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col xl={3} lg={3} md={3} sm={6} xs={6}className="mb-3">
-                            <Card className="imageBox card1">
-                                <img src={ProductItem}/>
+                                <img src={ProductItem} alt=""/>
                                 <Card.Body>
                                     <h1 className="productName">T-SHART</h1>
                                     <p className="productPrice">Price- 225 </p>
@@ -81,7 +64,7 @@ class Callection extends Component {
                         </Col>
                         <Col xl={3} lg={3} md={3} sm={6} xs={6} className="mb-3">
                             <Card className="imageBox card1">
-                                <img src={ProductItem}/>
+                                <Link to='/allcallection'> <img src={ProductItem} alt=""/></Link>
                                 <Card.Body>
                                     <h1 className="productName">T-SHART</h1>
                                     <p className="productPrice">Price- 225 </p>
@@ -90,7 +73,7 @@ class Callection extends Component {
                         </Col>
                         <Col xl={3} lg={3} md={3} sm={6} xs={6} className="mb-3">
                             <Card className="imageBox card1">
-                                <img src={ProductItem}/>
+                                <img src={ProductItem} alt=""/>
                                 <Card.Body>
                                     <h1 className="productName">T-SHART</h1>
                                     <p className="productPrice">Price- 225 </p>
@@ -99,7 +82,7 @@ class Callection extends Component {
                         </Col>
                         <Col xl={3} lg={3} md={3} sm={6} xs={6} className="mb-3">
                             <Card className="imageBox card1">
-                                <img src={ProductItem}/>
+                                <img src={ProductItem} alt=""/>
                                 <Card.Body>
                                     <h1 className="productName">T-SHART</h1>
                                     <p className="productPrice">Price- 225 </p>
@@ -108,7 +91,25 @@ class Callection extends Component {
                         </Col>
                         <Col xl={3} lg={3} md={3} sm={6} xs={6} className="mb-3">
                             <Card className="imageBox card1">
-                                <img src={ProductItem}/>
+                                <img src={ProductItem} alt=""/>
+                                <Card.Body>
+                                    <h1 className="productName">T-SHART</h1>
+                                    <p className="productPrice">Price- 225 </p>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col xl={3} lg={3} md={3} sm={6} xs={6} className="mb-3">
+                            <Card className="imageBox card1">
+                                <img src={ProductItem} alt=""/>
+                                <Card.Body>
+                                    <h1 className="productName">T-SHART</h1>
+                                    <p className="productPrice">Price- 225 </p>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col xl={3} lg={3} md={3} sm={6} xs={6} className="mb-3">
+                            <Card className="imageBox card1">
+                                <img src={ProductItem} alt=""/>
                                 <Card.Body>
                                     <h1 className="productName">T-SHART</h1>
                                     <p className="productPrice">Price- 225 </p>
@@ -117,7 +118,7 @@ class Callection extends Component {
                         </Col>
                         <Col xl={3} lg={3} md={3} sm={6} xs={6}>
                             <Card className="imageBox card1">
-                                <img src={ProductItem}/>
+                                <img src={ProductItem} alt=''/>
                                 <Card.Body>
                                     <h1 className="productName">T-SHART</h1>
                                     <p className="productPrice">Price- 225 </p>

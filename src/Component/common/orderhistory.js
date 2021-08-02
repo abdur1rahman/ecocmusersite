@@ -2,7 +2,7 @@ import React, {Component, Fragment} from 'react';
 import {Col, Container, Row, Table} from "react-bootstrap";
 import axios from "axios";
 import AppURL from "../api/appURL";
-import ProductItem2 from '../../asset/images/portfolio-08.jpg';
+
 
 class Orderhistory extends Component {
     constructor() {

@@ -12,7 +12,7 @@ class Priviccy extends Component {
     }
     componentDidMount() {
         axios.get(AppURL.siteInfo).then(response=>{
-            if(response.status==200){
+            if(response.status===200){
                 let jsonData = (response.data)[0]['privicy'];
                 this.setState({privic:jsonData});
             }else {
@@ -25,30 +25,33 @@ class Priviccy extends Component {
 
     render() {
         return (
-            <Container className="mt-5">
-                <Row>
-                    <Col md={12} lg={12} xl={12} sm={12} xs={12}>
+            <Fragment>
+                <Container className="mt-5">
+                    <Row>
+                        <Col md={12} lg={12} xl={12} sm={12} xs={12}>
 
-                        {this.state.privic}
+                            {this.state.privic}
 
-                        <h3 className="mt-5">PRIVICY </h3>
+                            <h3 className="mt-5">PRIVICY </h3>
 
-                        <p>    I am Abdur Rahman. i was born on 13 Augest 1995. i live at dyara,Sharat Nagar,
-                            Adarsha Sadar, District Cumilla, Bangladesh.ou</p>
+                            <p>    I am Abdur Rahman. i was born on 13 Augest 1995. i live at dyara,Sharat Nagar,
+                                Adarsha Sadar, District Cumilla, Bangladesh.ou</p>
 
-                        <h3>ABOUT ME </h3>
+                            <h3>ABOUT ME </h3>
 
-                        <p>    I am Abdur Rahman. i was born on 13 Augest 1995. i live at dyara,Sharat Nagar,
-                            Adarsha Sadar, District Cumilla, Bangladesh.ou</p>
-                        <h3>ABOUT ME </h3>
+                            <p>    I am Abdur Rahman. i was born on 13 Augest 1995. i live at dyara,Sharat Nagar,
+                                Adarsha Sadar, District Cumilla, Bangladesh.ou</p>
+                            <h3>ABOUT ME </h3>
 
-                        <p>    I am Abdur Rahman. i was born on 13 Augest 1995. i live at dyara,Sharat Nagar,
-                            Adarsha Sadar, District Cumilla, Bangladesh.ou</p>
+                            <p>    I am Abdur Rahman. i was born on 13 Augest 1995. i live at dyara,Sharat Nagar,
+                                Adarsha Sadar, District Cumilla, Bangladesh.ou</p>
 
 
-                    </Col>
-                </Row>
-            </Container>
+                        </Col>
+                    </Row>
+                </Container>
+            </Fragment>
+
 
         );
     }

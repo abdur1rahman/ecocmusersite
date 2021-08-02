@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import {Button, Card, Col, Container, Form, Row} from "react-bootstrap";
+import {Button, Card, Col, Container, Row} from "react-bootstrap";
 import ProductItem from "../../asset/images/portfolio-09.jpg";
 import {Link} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -27,7 +27,7 @@ class Faverite extends Component {
                     <Row>
                         <Col xl={3} lg={3} md={3} sm={6} xs={6} className="mb-3">
                             <Card className="imageBox card1 text-center">
-                                <Link to='/productdetails'><img src={ProductItem}/></Link>
+                                <Link to='/productdetails'><img src={ProductItem} alt=""/></Link>
                                 <Card.Body>
                                     <h1 className="productName">T-SHART</h1>
                                     <p className="productPrice">Price- 225 </p>
@@ -37,7 +37,7 @@ class Faverite extends Component {
                         </Col>
                         <Col xl={3} lg={3} md={3} sm={6} xs={6} className="mb-3">
                             <Card className="imageBox card1 text-center">
-                                <Link to='/productdetails'><img src={ProductItem}/></Link>
+                                <Link to='/productdetails'><img src={ProductItem} alt=""/></Link>
                                 <Card.Body>
                                     <h1 className="productName">T-SHART</h1>
                                     <p className="productPrice">Price- 225 </p>
@@ -47,7 +47,7 @@ class Faverite extends Component {
                         </Col>
                         <Col xl={3} lg={3} md={3} sm={6} xs={6} className="mb-3">
                             <Card className="imageBox card1 text-center">
-                                <Link to='/productdetails'><img src={ProductItem}/></Link>
+                                <Link to='/productdetails'><img src={ProductItem} alt=""/></Link>
                                 <Card.Body>
                                     <h1 className="productName">T-SHART</h1>
                                     <p className="productPrice">Price- 225 </p>
@@ -57,7 +57,7 @@ class Faverite extends Component {
                         </Col>
                         <Col xl={3} lg={3} md={3} sm={6} xs={6} className="mb-3">
                             <Card className="imageBox card1 text-center">
-                                <Link to='/productdetails'><img src={ProductItem}/></Link>
+                                <Link to='/productdetails'><img src={ProductItem} alt=""/></Link>
                                 <Card.Body>
                                     <h1 className="productName">T-SHART</h1>
                                     <p className="productPrice">Price- 225 </p>
@@ -67,7 +67,7 @@ class Faverite extends Component {
                         </Col>
                         <Col xl={3} lg={3} md={3} sm={6} xs={6} className="mb-3">
                             <Card className="imageBox card1 text-center">
-                                <Link to='/productdetails'><img src={ProductItem}/></Link>
+                                <Link to='/productdetails'><img src={ProductItem} alt=''/></Link>
                                 <Card.Body>
                                     <h1 className="productName">T-SHART</h1>
                                     <p className="productPrice">Price- 225 </p>
@@ -77,7 +77,7 @@ class Faverite extends Component {
                         </Col>
                         <Col xl={3} lg={3} md={3} sm={6} xs={6} className="mb-3">
                             <Card className="imageBox card1 text-center">
-                                <Link to='/productdetails'><img src={ProductItem}/></Link>
+                                <Link to='/productdetails'><img src={ProductItem} alt=''/></Link>
                                 <Card.Body>
                                     <h1 className="productName">T-SHART</h1>
                                     <p className="productPrice">Price- 225 </p>
@@ -87,7 +87,7 @@ class Faverite extends Component {
                         </Col>
                         <Col xl={3} lg={3} md={3} sm={6} xs={6} className="mb-3">
                             <Card className="imageBox card1 text-center">
-                                <Link to='/productdetails'><img src={ProductItem}/></Link>
+                                <Link to='/productdetails'><img src={ProductItem} alt=''/></Link>
                                 <Card.Body>
                                     <h1 className="productName">T-SHART</h1>
                                     <p className="productPrice">Price- 225 </p>
@@ -97,7 +97,7 @@ class Faverite extends Component {
                         </Col>
                         <Col xl={3} lg={3} md={3} sm={6} xs={6} className="mb-3">
                             <Card className="imageBox card1 text-center">
-                                <Link to='/productdetails'><img src={ProductItem}/></Link>
+                                <Link to='/productdetails'><img src={ProductItem} alt=''/></Link>
                                 <Card.Body>
                                     <h1 className="productName">T-SHART</h1>
                                     <p className="productPrice">Price- 225 </p>
