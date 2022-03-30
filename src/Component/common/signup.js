@@ -40,21 +40,32 @@ class Signup extends Component {
         let pass= this.state.password;
         let phoneNo= this.state.phone;
         let emaile= this.state.email;
-        let MyFormData= new FormData();
-        MyFormData.append('username',user);
-        MyFormData.append('password',pass);
-        MyFormData.append('phone',phoneNo);
-        MyFormData.append('email',emaile);
-        axios.post(AppURL.Signup,MyFormData).then(response=>{
-            if(response.data===1){
-                toast.success('Successfully account');
-               this.setState({pageRedirect:true})
-            }else {
-                alert('500 Internal Server Errror')
-            }
-        }).catch(error=>{
-            alert('500 Internal Server Errror')
-        })
+        if(user.length===0){
+            toast.error('Pleass Enter You User Name');
+        }else if(pass.length===0){
+            toast.error('Pleass Enter You Password');
+        }else if(phoneNo.length===0){
+            toast.error('Pleass Enter You Phone');
+        }else if(emaile.length===0){
+            toast.error('Pleass Enter You Email');
+        }else {
+            let MyFormData= new FormData();
+            MyFormData.append('username',user);
+            MyFormData.append('password',pass);
+            MyFormData.append('phone',phoneNo);
+            MyFormData.append('email',emaile);
+            axios.post(AppURL.Signup,MyFormData).then(response=>{
+                if(response.data===1){
+                    this.setState({pageRedirect:true})
+                }else {
+                    toast.error('500 Internal Server Errror')
+                }
+            }).catch(error=>{
+                toast.error('500 Internal Server Errror')
+            })
+        }
+
+
     }
 
     render() {

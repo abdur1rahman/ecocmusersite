@@ -11,16 +11,21 @@ class About extends Component {
         }
     }
     componentDidMount() {
-        let siteinfoAout=sessionStorage.getItem("siteInfo");
-        axios.get(AppURL.siteInfo).then(response=>{
-            if(response.status===200){
-                let jsondata= (response.data)[0]['about'];
-                this.setState({about:jsondata});
-                sessionStorage.setItem("siteinfoAout",jsondata)
-            }
-        }).catch(error=>{
+        let siteinfoAout=sessionStorage.getItem("siteinfoAout");
+        if(siteinfoAout===null){
+            axios.get(AppURL.siteInfo).then(response=>{
+                if(response.status===200){
+                    let jsondata= (response.data)[0]['about'];
+                    sessionStorage.setItem("siteinfoAout",jsondata)
+                    this.setState({about:jsondata});
+                }
+            }).catch(error=>{
 
-        });
+            });
+        }else {
+            this.setState({about:siteinfoAout});
+        }
+
     }
 
     render() {
@@ -34,7 +39,6 @@ class About extends Component {
                         </Col>
                     </Row>
                 </Container>
-
             </Fragment>
         );
     }

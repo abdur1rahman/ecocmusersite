@@ -103,7 +103,7 @@ class Footer extends Component {
                         </Col>
                     </Row>
                 </Container>
-                <div id="google_translate_element"></div>
+                {/*<div id="google_translate_element"></div>*/}
                 <Container fluid={true} className="sectionFooter text-center">
                     <Row>
                     <Col xl={12} lg={12} md={12} sm={12}xs={12}>

@@ -8,6 +8,9 @@ import {Link} from 'react-router-dom';
 import axios from "axios";
 import AppURL from "../api/appURL";
 import {Redirect} from "react-router";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 class Nav extends Component {
     constructor({match}) {
@@ -28,6 +31,11 @@ class Nav extends Component {
     OnClickSearch(){
        if(this.state.SearchKey.length>=2){
             this.setState({SearchKeyStatusValue:true});
+       }else {
+           toast.error("Pleasse Select minmum Tow Charecter");
+
+
+
        }
     }
     SearchRedirect(){
@@ -40,6 +48,7 @@ class Nav extends Component {
         axios.get(AppURL.categori).then(response=>{
                 this.setState({data:response.data})
         }).catch(error=>{
+
         })
     }
     render() {
@@ -64,7 +73,7 @@ class Nav extends Component {
         return (
             <Fragment>
                     <Navbar fixed={'top'} className="NavBg mb-0"  expand="lg">
-                        <Link to='/' className='mr-100'><Navbar.Brand className="navli">React-Bootstrap</Navbar.Brand></Link>
+                        <Link to='/' className='mr-100'><Navbar.Brand className="navli">SOKHER-HAAT</Navbar.Brand></Link>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Col>
@@ -98,8 +107,9 @@ class Nav extends Component {
                                 <Link to="/loging" className='ml-2 navli'>Login</Link>
                                 <Link to="/order" className='ml-2 navli'>Card Item</Link>
                             </Col>
-                            <Col><div id="google_translate_element"></div></Col>
+                            {/*<Col><div id="google_translate_element"></div></Col>*/}
                         </Navbar.Collapse>
+                        <ToastContainer/>
                     </Navbar>
                 {this.SearchRedirect()}
             </Fragment>

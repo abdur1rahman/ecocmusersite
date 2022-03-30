@@ -33,4 +33,25 @@ a{
 a:hover{
     text-decoration: none;
 }
+.goog-te-banner{
+    display: none !important;
+}
+.goog-te-banner{
 
+}
+.goog-te-banner-frame{
+    left: 0px;
+    top: 0px;
+    height: 39px;
+    width: 100%;
+    z-index: 10000001;
+    position: fixed;
+    border: none;
+    display: none;
+    border-bottom: 1px solid #6b90da;
+    margin: 0;
+    -moz-box-shadow: 0 0 8px 1px #999999;
+    -webkit-box-shadow: 0 0 8px 1px #999999;
+    box-shadow: 0 0 8px 1px #999999;
+    _position: absolute;
+}

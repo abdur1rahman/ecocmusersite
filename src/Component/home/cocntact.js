@@ -2,6 +2,8 @@ import React, {Component, Fragment} from 'react';
 import {Col,Row,Container,Form, FormControl} from "react-bootstrap";
 import axios from "axios";
 import AppURL from "../api/appURL";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -32,29 +34,34 @@ class Cocntact extends Component {
 
     }
     OnSubmit=(event)=>{
+        event.preventDefault();
         let name = this.state.name;
         let mobile = this.state.mobile;
         let msg = this.state.msg;
-        let contactForm=document.getElementById('contactForm');
-        let MyFormData = new FormData();
-        MyFormData.append("name",name)
-        MyFormData.append("phone",mobile)
-        MyFormData.append("messagge",msg)
-        axios.post(AppURL.postcontat,MyFormData).then(function (response) {
-            if(response.status===200 && response.data===1){
+        if(name.length===0){
+            toast.error("Enter Your Name");
+        }else if(mobile.length===0){
+            toast.error("Enter Your Phone");
+        }else if(msg.length===0){
+            toast.error("Enter Your Massage");
+        }else {
 
-                alert('sucess');
-                contactForm.reset();
-
-
-            }else {
-                alert('error');
-            }
-        }).catch(function (error) {
-            alert('error');
-        })
-
-        event.preventDefault();
+            let contactForm=document.getElementById('contactForm');
+            let MyFormData = new FormData();
+            MyFormData.append("name",name)
+            MyFormData.append("phone",mobile)
+            MyFormData.append("messagge",msg)
+            axios.post(AppURL.postcontat,MyFormData).then(function (response) {
+                if(response.status===200 && response.data===1){
+                    toast.success('Successfully Your Account');
+                    contactForm.reset();
+                }else {
+                    toast.error('500  Internal Server Error');
+                }
+            }).catch(function (error) {
+                toast.error('500  Internal Server Error');
+            })
+        }
     }
     render() {
         return (
@@ -70,6 +77,7 @@ class Cocntact extends Component {
                             </Form>
                         </Col>
                     </Row>
+                    <ToastContainer/>
                 </Container>
             </Fragment>
         );

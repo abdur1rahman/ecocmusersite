@@ -8,7 +8,8 @@ import {faShopify, faJediOrder} from "@fortawesome/free-brands-svg-icons";
 import {Link, Redirect} from "react-router-dom";
 import axios from "axios";
 import AppURL from "../api/appURL";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class ProductDetails extends Component {
     constructor() {
@@ -42,26 +43,33 @@ class ProductDetails extends Component {
         this.setState({quantity:quantityValue});
     }
 
-
     AddToCart=(event)=>{
         let colorSelect= this.state.color;
         let sizeSelect= this.state.size;
         let quantitySelect= this.state.quantity;
         let productCodeSelect= this.state.productCode;
-        let MyFormData= new FormData();
-        MyFormData.append('color',colorSelect);
-        MyFormData.append('size',sizeSelect);
-        MyFormData.append('quantity',quantitySelect);
-        MyFormData.append('produtcode',productCodeSelect);
-        axios.post(AppURL.AddToCart,MyFormData).then(response=>{
-            if(response.data===1){
-                this.setState({RedirectOrderpage:true});
-            }else {
-                alert('Item Added Fail')
-            }
-        }).catch(error=>{
-            alert('Item Added Fail')
-        })
+        if(colorSelect.length===0){
+            toast.error("Pleace Select Yor Color")
+        } else if(sizeSelect.length===0){
+            toast.error("Pleace Select Yor Size")
+        }else if(quantitySelect.length===0){
+            toast.error("Pleace Select Yor Quantity")
+        }else {
+            let MyFormData= new FormData();
+            MyFormData.append('color',colorSelect);
+            MyFormData.append('size',sizeSelect);
+            MyFormData.append('quantity',quantitySelect);
+            MyFormData.append('produtcode',productCodeSelect);
+            axios.post(AppURL.AddToCart,MyFormData).then(response=>{
+                if(response.data===1){
+                    this.setState({RedirectOrderpage:true});
+                }else {
+                    toast.error('Item Added Fail');
+                }
+            }).catch(error=>{
+                toast.error('500 Internal Server Error')
+            })
+        }
     }
     render() {
 
@@ -91,9 +99,10 @@ class ProductDetails extends Component {
         if(this.state.productCode===null){
             this.setState({productCode:productcode})
         }
-        if(this.state.RedirectOrderpage===true){
-            return <Redirect to="/order"/>
-        }
+         if(this.state.RedirectOrderpage===true){
+
+             return <Redirect to='/order'/>
+         }
 
         return (
 
@@ -143,8 +152,8 @@ class ProductDetails extends Component {
                                     <option value="04" >04</option>
                                 </select>
                             </div>
-                                <Link  onClick={this.AddToCart} className='btn btn-success btn-sm m-2 p-2' > <FontAwesomeIcon icon={faShopify}/> Add to Card </Link>
-                                <Link  onClick={this.AddToCart}  className='btn btn-success btn-sm m-2 p-2'  ><FontAwesomeIcon icon={faJediOrder}/> Order Now </Link>
+                                <div  onClick={this.AddToCart} className='btn btn-success btn-sm m-2 p-2' > <FontAwesomeIcon icon={faShopify}/> Add to Card </div>
+                                <div  onClick={this.AddToCart}  className='btn btn-success btn-sm m-2 p-2'  ><FontAwesomeIcon icon={faJediOrder}/> Order Now </div>
                                 <Link to='/feverite' className='btn btn-success btn-sm m-2 p-2'><FontAwesomeIcon icon={faHeart}/> Favourite </Link>
                             <h6 className='mt-3'>REVIEW</h6>
                             <h6 className='colorChoose'>
@@ -167,6 +176,7 @@ class ProductDetails extends Component {
                             <p>Lorem icocn dolar site responsive qality full web site Lorem icocn dolar site responsive qality full web site </p>
                         </Col>
                     </Row>
+                    <ToastContainer/>
                 </Container>
 
             </Fragment>

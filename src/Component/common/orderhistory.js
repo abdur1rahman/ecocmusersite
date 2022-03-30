@@ -2,35 +2,48 @@ import React, {Component, Fragment} from 'react';
 import {Col, Container, Row, Table} from "react-bootstrap";
 import axios from "axios";
 import AppURL from "../api/appURL";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {Redirect} from "react-router";
+import {Link} from "react-router-dom";
 
 class Orderhistory extends Component {
     constructor() {
         super();
         this.state={
-            orderhistoryData:[]
+            orderhistoryData:[],
+            pageRefreshStatus:false,
+
         }
     }
     componentDidMount() {
         axios.get(AppURL.orderhistory).then(response=>{
             this.setState({orderhistoryData:response.data})
         }).catch(error=>{
-
+            toast.error('500 internal server  Errror');
         })
     }
+
     deleteOrder=()=>{
         axios.post(AppURL.RemoveOrderhistory).then(response=>{
             if(response.data===1){
-                alert('Remove success');
+                this.setState({pageRefreshStatus:true})
             }else {
-                alert('Remove Not success');
+                toast.error('Remove Not success');
             }
         }).catch(error=>{
-            alert('Remove NO  success');
+            toast.error('500Internal server error');
         })
+    }
+    pageRefresh=()=>{
+        if(this.state.pageRefreshStatus===true){
+            let url= window.location.reload();
+            return <Redirect to={url}/>;
+        }
     }
 
     render() {
+
         let orderhistoryData=this.state.orderhistoryData;
         let historyView=orderhistoryData.map((historyData,i)=>{
             return  <tr key={toString()}>
@@ -42,7 +55,7 @@ class Orderhistory extends Component {
                 <td>{historyData.name}</td>
                 <td>{historyData.productinfo}</td>
                 <td>{historyData.orderstatus}</td>
-                <td><button onClick={this.deleteOrder} className='btn btn-sm btn-danger' >Delete</button></td>
+                <td><Link onClick={this.deleteOrder} className='btn btn-sm btn-danger' >Delete</Link></td>
             </tr>
         })
 
@@ -52,7 +65,7 @@ class Orderhistory extends Component {
                <Container >
                    <Row className='mt-5'>
                        <Col md={12} xl={12} lg={12} sm={12}>
-                           <Table striped bordered hover>
+                           <Table responsive striped bordered hover>
                                <thead>
                                <tr>
                                    <th>Serial No</th>
@@ -74,8 +87,9 @@ class Orderhistory extends Component {
                            </Table>
                        </Col>
                    </Row>
+                   <ToastContainer/>
                </Container>
-                {this.componentDidMount()}
+                {this.pageRefresh()}
             </Fragment>
         );
     }
