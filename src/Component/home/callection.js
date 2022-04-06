@@ -3,7 +3,7 @@ import {Card, Col, Container, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import axios from "axios";
 import AppURL from "../api/appURL";
-
+import AppURL from "../api/appURL";
 class Callection extends Component {
     constructor() {
         super();
